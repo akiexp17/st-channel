@@ -25,15 +25,6 @@ jobs:
         working-directory: 99_System/quartz
         run: npm install
 
-      - name: Setup Content
-        working-directory: 99_System/quartz
-        run: |
-          rm -rf content/news content/articles
-          mkdir -p content/news content/articles
-          cp -r ../../01_News/* content/news/
-          cp -r ../../02_Articles/* content/articles/
-          ls -R content
-
       - name: Build Quartz
         working-directory: 99_System/quartz
         run: npx quartz build
