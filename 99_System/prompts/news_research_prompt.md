@@ -29,7 +29,7 @@
 ## 📝 Output Format
 
 ### 1. Weekly Summary Table (Update this file)
-`01_News/2026/YYYY-MM-DD--TS-news/Weekly_News.md`
+`01_News/2026/YYYY-MM-DD--ST-news/Weekly_News.md`
 
 | タイトル | 記事 | 引用元 |
 | :--- | :--- | :--- |
@@ -37,7 +37,7 @@
 
 ### 2. Daily News File (Create new file)
 各主要ニュースについて、個別のファイルを作成してください。
-**Path**: `01_News/2026/YYYY-MM-DD--TS-news/YYYY-MM-DD_[Title].md`
+**Path**: `01_News/2026/YYYY-MM-DD--ST-news/YYYY-MM-DD_[Title].md`
 **Template**: `Daily_News_Template.md`
 **Format**:
 
