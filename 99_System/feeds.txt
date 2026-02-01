@@ -1,0 +1,65 @@
+# === General Tech & Science ===
+https://techcrunch.com/feed/
+https://www.theverge.com/rss/index.xml
+https://wired.jp/rss/index.xml
+https://dev.classmethod.jp/feed/
+https://zenn.dev/feed/all
+https://qiita.com/popular-items/feed
+https://b.hatena.ne.jp/hotentry/it.rss
+https://aws.amazon.com/blogs/machine-learning/feed/
+
+# === AI & Machine Learning ===
+https://arxiv.org/rss/cs.AI
+https://arxiv.org/rss/cs.LG
+https://arxiv.org/rss/cs.CL
+https://arxiv.org/rss/stat.ML
+https://openai.com/news/rss.xml
+https://research.google/blog/rss/
+https://blog.google/innovation-and-ai/models-and-research/google-research/rss/
+https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/
+https://huggingface.co/blog/feed.xml
+https://ucri.nict.go.jp/latestnews.rdf
+https://www.aist.go.jp/ctl/module/mid/27/tid/75/rss.php
+
+# === Biotech & Longevity ===
+https://connect.biorxiv.org/biorxiv_xml.php?subject=crispr
+https://connect.biorxiv.org/biorxiv_xml.php?subject=synthetic_biology
+https://connect.biorxiv.org/biorxiv_xml.php?subject=neuroscience
+https://connect.biorxiv.org/biorxiv_xml.php?subject=genomics
+https://connect.medrxiv.org/medrxiv_xml.php?subject=drug_discovery
+https://connect.medrxiv.org/medrxiv_xml.php?subject=geriatric_medicine
+https://connect.medrxiv.org/medrxiv_xml.php?subject=neurology
+https://www.science.org/action/showFeed?feed=rss&jc=science&type=etoc
+https://www.science.org/action/showFeed?feed=rss&jc=science&type=axatoc
+https://www.cell.com/cell/inpress.rss
+https://www.cell.com/cell/current.rss
+https://www.cell.com/cell-metabolism/inpress.rss
+https://www.cell.com/cell-metabolism/current.rss
+https://www.natureasia.com/ja-jp/rss
+https://www.riken.jp/feed/press_feed/
+https://www.riken.jp/feed/news_feed/
+https://www.riken.jp/feed/events_feed/
+https://www.oist.jp/news-center.xml
+
+# === Space & Astronomy ===
+https://www.nasa.gov/rss/dyn/breaking_news.rss
+https://cneos.jpl.nasa.gov/feed/news.xml
+https://www.jaxa.jp/rss/press_j.rdf
+https://www.jaxa.jp/rss/new_j.rdf
+https://www.nao.ac.jp/en/atom.xml
+https://arxiv.org/rss/astro-ph
+
+# === Quantum & Computing ===
+https://arxiv.org/rss/quant-ph
+https://arxiv.org/rss/physics.app-ph
+https://www.science.org/action/showFeed?feed=rss&jc=sciadv&type=etoc
+
+# === Robotics & Hard Tech ===
+https://arxiv.org/rss/cs.RO
+https://arxiv.org/rss/eess.SY
+https://www.science.org/action/showFeed?feed=rss&jc=scirobotics&type=etoc
+
+# === Engineering & Chemistry ===
+https://arxiv.org/rss/physics.flu-dyn
+https://arxiv.org/rss/physics.chem-ph
+https://www.cell.com/heliyon/rss

@@ -1,0 +1,46 @@
+name: Deploy Quartz Site
+
+on:
+  push:
+    branches:
+      - main
+ 
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        working-directory: 99_System/quartz
+        run: npm install
+
+      - name: Setup Content
+        working-directory: 99_System/quartz
+        run: |
+          rm -rf content/news content/articles
+          mkdir -p content/news content/articles
+          cp -r ../../01_News/* content/news/
+          cp -r ../../02_Articles/* content/articles/
+          ls -R content
+
+      - name: Build Quartz
+        working-directory: 99_System/quartz
+        run: npx quartz build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./99_System/quartz/public
+          publish_branch: gh-pages
