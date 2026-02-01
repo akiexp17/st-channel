@@ -29,7 +29,7 @@
 ## 📝 Output Format
 
 ### 1. Weekly Summary Table (Update this file)
-`01_News/2026/YYYY-MM-DD--ST-news/Weekly_News.md`
+`01_News/2026/YYYY-MM-DD--ST-news/index.md`
 
 | タイトル | 記事 | 引用元 |
 | :--- | :--- | :--- |

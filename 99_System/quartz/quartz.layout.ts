@@ -38,7 +38,13 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      filterFn: (node) => {
+        // Hide daily news files (YYYY-MM-DD_Title.md) to keep the explorer clean
+        // Only the Folder (index.md) will be visible
+        return !/^\d{4}-\d{2}-\d{2}_/.test(node.name)
+      },
+    }),
   ],
   right: [
     Component.Graph(),
