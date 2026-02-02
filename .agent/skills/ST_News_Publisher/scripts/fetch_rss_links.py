@@ -45,7 +45,7 @@ def load_feeds():
 def fetch_feeds():
     feeds = load_feeds()
     links = []
-    now = datetime.datetime.now()
+    now = datetime.datetime.utcnow()
     # 24 hours ago
     time_threshold = now - datetime.timedelta(hours=24)
 

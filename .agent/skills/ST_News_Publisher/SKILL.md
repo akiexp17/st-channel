@@ -53,7 +53,7 @@ python3 .agent/skills/ST_News_Publisher/scripts/get_weekly_target.py
 **News Research Prompt** (`.agent/skills/ST_News_Publisher/assets/prompts/news_research_prompt.md`) の基準とフォーマットに従い、以下の処理を行う。
 
 1.  Inboxのリストから、技術的に重要でインパクトのあるニュースを選定する。
-2.  各ニュースについて、`TARGET_DIR` 内に日刊記事ファイル (`YYYY-MM-DD_Title.md`) を作成する。
+2.  各ニュースについて、**必ずリンク先の本文をツールで取得・熟読し**、`TARGET_DIR` 内に日刊記事ファイル (`YYYY-MM-DD_Title.md`) を作成する。
     - 内容は `.agent/skills/ST_News_Publisher/assets/templates/Daily_News_Template.md` に従うこと（テンプレートも移動している場合）。
 
 ### 3. まとめファイルの更新

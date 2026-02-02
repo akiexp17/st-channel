@@ -4,27 +4,61 @@
 以下の手順に従い、本日の重要な科学技術ニュースを収集・選定し、指定されたフォーマットで出力してください。
 
 ## 🎯 Objective
-「人類の未来を変える可能性のある」科学技術のブレイクスルーや重要な産業動向を特定し、その本質を簡潔に伝えること。
+科学技術における**注目すべき技術動向**、新しいツール・ライブラリのリリース、研究成果、産業の重要な変化を幅広くカバーし、読者に有用な情報を提供すること。
+
+## 📊 Selection Rules (IMPORTANT)
+
+> [!IMPORTANT]
+> **1日 5〜8件程度**の記事を厳選すること（最大10件）。質を重視し、無理に数を稼がない。
+
+### 選定の優先度
+1. **Tier 1 (必ず採用)**: 新しいモデル・ツール・ライブラリのリリース、重要な研究成果の発表、業界を変える可能性のある発表
+2. **Tier 2 (積極的に採用)**: 既存技術の大幅改善、興味深い応用事例、注目すべきベンチマーク結果
+3. **Tier 3 (余裕があれば採用)**: 技術トレンドの解説記事、チュートリアル、業界動向分析
 
 ## 📥 Inbox Workflow
 ユーザーから「このリストをまとめて」と依頼された場合（または `Inbox/` 内のリンク集を指定された場合）、そのリスト内のURLから優先的に情報を取得してください。
-- リンク集に記載があっても、中身が薄い/重要でない場合はスキップして構いません。
+- **積極的に採用する姿勢**で臨むこと。迷ったら採用する方向で判断する。
+- 明らかに内容が薄い/重複している場合のみスキップ。
 - 不足している重要ニュースがあれば、検索して補完してください。
+- **大量リスト対策**: リストが非常に長い場合（例: 50件以上）、すべてを詳細に検討するとエラーになる可能性があるため、**タイトルベースでキーワード（LLM, Agent, Foundation Model, Google, OpenAI等）にヒットするもの**や、**主要メディア/ラボ**のもの（Top 50以内）を優先的にピックアップし、処理時間を節約してください。全件走査でコンテキストあふれやタイムアウトを起こさないよう注意すること。
 
 ## 🔍 Focus Domains (Keywords)
 以下の分野を中心にリサーチしてください。
-1. **AI & ML**: LLM, Generative AI, AGI, Agents, Model Architecture (Source: arXiv, HuggingFace, OpenAI/Google/Anthropic Blogs)
-2. **Biotech & Longevity**: CRISPR, Drug Discovery, Neuroscience, Aging Research, Synthetic Biology (Source: Nature, Science, Cell)
-3. **Space & Astro**: SpaceX, NASA, Exoplanets, propulsion systems (Source: SpaceNews, NASA JPL)
-4. **Quantum & Computing**: Quantum Computers, Semiconductors, Optical Computing
-5. **Robotics & Hard Tech**: Humanoid, Automation, Batteries, New Materials, Fusion Energy
-6. **Engineering & Chemistry**: Fluid Dynamics, Thermodynamics, Chemical Engineering, Material Informatics
+
+### Core Technology
+1. **AI & ML**: LLM, Generative AI, AGI, Agents, Model Architecture, Fine-tuning, RAG, Prompt Engineering
+2. **Developer Tools & OSS**: 新しいフレームワーク、ライブラリ、IDE機能、CI/CD、DevOps ツール、GitHub Trending
+3. **Cloud & Infrastructure**: クラウドサービスの新機能、Kubernetes、サーバーレス、エッジコンピューティング
+
+### Deep Tech
+4. **Biotech & Longevity**: CRISPR, Drug Discovery, Neuroscience, Aging Research, Synthetic Biology
+5. **Space & Astro**: SpaceX, NASA, Exoplanets, propulsion systems
+6. **Quantum & Computing**: Quantum Computers, Semiconductors, Optical Computing, New Chip Architectures
+7. **Robotics & Hard Tech**: Humanoid, Automation, Batteries, New Materials, Fusion Energy
+8. **Engineering & Chemistry**: Fluid Dynamics, Thermodynamics, Chemical Engineering, Material Informatics
+
+## 📚 arXiv論文の取り扱い
+
+> [!NOTE]
+> arXivの処理は時間がかかるため、**「1日最大3件」**を上限とする。
+
+### 🚀 高速選定ルール (Fast Filter)
+1.  **アブストラクト/タイトル判断**: リンク先を開く前に、RSS/リストにある**タイトル（アブストラクトがある場合はそれも含む）だけで一次選別**を完了させる。リストにアブストラクトがない場合は**タイトルのみ**で判断し、**選定のためにURLをツールで開くことは禁止**とする（時間がかかりすぎるため）。
+2.  **Famous Lab優先**: DeepMind, Google, Meta, OpenAI, Anthropic, Microsoft等の有名ラボ、または著名な著者のものを最優先する。これ以外は、よほどタイトルが革新的でない限りスキップしてよい。
+3.  **実用性重視**: "Code available", "State-of-the-art", "New Benchmark" などのキーワードが含まれるものを優先。
+
+### スキップ基準 (即判断)
+- 既存手法の小さな改善（Incremental improvement）
+- 特定ドメインに限定されすぎている
+- **Abstractを読んでも「すごい」と思えないものは即スキップ**
 
 ## 🚫 Anti-Patterns (Excluded)
-- **噂・リーク情報**: 確定していない情報は原則除外（よほど信頼性が高いものを除く）
+- **噂・リーク情報**: 確定していない情報は原則除外
 - **マイナーな製品アプデ**: スマホの細かい新機能やアプリのUI変更などは除外
 - **資金調達・人事**: 技術的な文脈がない純粋なビジネスニュースは除外
 - **株式・市況**: 株価の変動や投資推奨など
+- **重複記事**: 同じトピックについて複数のソースがある場合は最も詳細なものを1つ選ぶ
 
 ## 📝 Output Format
 
@@ -53,8 +87,13 @@
 ...
 ```
 （`article_deep_dive_prompt.md` と同じフォーマットを使用）
-- **文字数**: 100〜150文字程度
-- **構成**: 「何が起きたか（What）」＋「なぜ重要か/何が変わるか（Impact）」
+- **Action**: 記事を執筆する前に、必ず **`read_url_content`** などのツールを使用してソース記事の全文を取得・熟読してください。タイトルとRSSの要約だけで書くことは禁止です。
+- **文字数**: 400〜600文字程度（内容の充実度を重視）
+- **構成**:
+    1.  **概要**: 3行程度で要約。
+    2.  **背景**: なぜこれがニュースになっているのか、これまでの経緯。
+    3.  **詳細**: 箇条書きなどで技術的/具体的な事実を列挙。
+    4.  **影響・考察**: 業界や社会へのインパクト。
 - **文体**: "です・ます"調は避け、簡潔な"だ・である"調または体言止めを使用。専門用語はそのまま使いつつ、難解すぎる場合は括弧で補足。
 
 ## 📚 Recommended Sources
