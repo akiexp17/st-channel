@@ -14,6 +14,8 @@ INBOX_DIR = os.path.join(BASE_DIR, "01_News", "Inbox")
 current_date = datetime.datetime.now().strftime("%Y-%m-%d")
 OUTPUT_FILE = os.path.join(INBOX_DIR, f"{current_date}_RSS_Links.md")
 
+import re
+
 def load_feeds():
     feeds = []
     if not os.path.exists(FEEDS_FILE):
@@ -23,8 +25,21 @@ def load_feeds():
     with open(FEEDS_FILE, "r") as f:
         for line in f:
             line = line.strip()
-            if line and not line.startswith("#"):
-                feeds.append(line)
+            # Ignore comments and empty lines
+            if not line or line.startswith("#"):
+                continue
+            
+            # Extract URL from markdown format: - **Name**: `URL`
+            # Look for content inside backticks first
+            match = re.search(r'`([^`]+)`', line)
+            if match:
+                feeds.append(match.group(1))
+            else:
+                # Fallback: check if the line itself looks like a URL (ignoring leading dash)
+                # Remove leading dash, bullet, or spaces
+                cleaned = line.lstrip("- ").strip()
+                if cleaned.startswith("http"):
+                    feeds.append(cleaned)
     return feeds
 
 def fetch_feeds():
