@@ -38,7 +38,7 @@
 ### 2. Daily News File (Create new file)
 各主要ニュースについて、個別のファイルを作成してください。
 **Path**: `01_News/2026/YYYY-MM-DD--ST-news/YYYY-MM-DD_[Title].md`
-**Template**: `Daily_News_Template.md`
+**Template**: `.agent/skills/ST_News_Publisher/assets/templates/Daily_News_Template.md`
 **Format**:
 
 ```markdown

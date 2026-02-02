@@ -7,12 +7,12 @@
     <key>ProgramArguments</key>
     <array>
         <string>/Users/akitomo/src/vault/10_Projects/ST_channnel/99_System/.venv/bin/python3</string>
-        <string>/Users/akitomo/src/vault/10_Projects/ST_channnel/99_System/scripts/fetch_rss_links.py</string>
+        <string>/Users/akitomo/src/vault/10_Projects/ST_channnel/.agent/skills/ST_News_Publisher/scripts/fetch_rss_links.py</string>
     </array>
     <key>StartCalendarInterval</key>
     <dict>
         <key>Hour</key>
-        <integer>7</integer>
+        <integer>6</integer>
         <key>Minute</key>
         <integer>0</integer>
     </dict>

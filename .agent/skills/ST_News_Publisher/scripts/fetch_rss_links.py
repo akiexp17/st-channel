@@ -8,7 +8,7 @@ if hasattr(ssl, '_create_unverified_context'):
     ssl._create_default_https_context = ssl._create_unverified_context
 
 # Configuration
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))))
 FEEDS_FILE = os.path.join(BASE_DIR, "99_System", "feeds.txt")
 INBOX_DIR = os.path.join(BASE_DIR, "01_News", "Inbox")
 current_date = datetime.datetime.now().strftime("%Y-%m-%d")
