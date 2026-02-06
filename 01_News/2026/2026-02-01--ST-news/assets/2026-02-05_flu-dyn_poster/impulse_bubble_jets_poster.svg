@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060916" />
+      <stop offset="0.55" stop-color="#0B1632" />
+      <stop offset="1" stop-color="#081A24" />
+    </linearGradient>
+
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#69D2FF" stop-opacity="0.0" />
+      <stop offset="0.2" stop-color="#69D2FF" stop-opacity="0.55" />
+      <stop offset="0.55" stop-color="#7C5CFF" stop-opacity="0.55" />
+      <stop offset="0.85" stop-color="#00F5D4" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#00F5D4" stop-opacity="0.0" />
+    </linearGradient>
+
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.9 0"
+        result="glow"
+      />
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="frost" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="2" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1080" height="1350" fill="url(#bg)" />
+
+  <!-- Waves -->
+  <path
+    d="M -40 360 C 160 290 230 430 420 360 C 600 295 720 410 900 350 C 1040 304 1120 360 1180 330"
+    fill="none"
+    stroke="url(#wave)"
+    stroke-width="20"
+    opacity="0.9"
+    filter="url(#softGlow)"
+  />
+  <path
+    d="M -80 460 C 140 520 250 390 420 455 C 590 520 700 385 900 470 C 1050 535 1150 470 1220 520"
+    fill="none"
+    stroke="url(#wave)"
+    stroke-width="14"
+    opacity="0.55"
+    filter="url(#softGlow)"
+  />
+
+  <!-- Bubbles -->
+  <g opacity="0.85" filter="url(#softGlow)">
+    <circle cx="165" cy="250" r="34" fill="none" stroke="#69D2FF" stroke-width="3" opacity="0.85" />
+    <circle cx="245" cy="210" r="14" fill="none" stroke="#00F5D4" stroke-width="2" opacity="0.7" />
+    <circle cx="885" cy="245" r="26" fill="none" stroke="#7C5CFF" stroke-width="3" opacity="0.75" />
+    <circle cx="935" cy="305" r="10" fill="none" stroke="#69D2FF" stroke-width="2" opacity="0.7" />
+    <circle cx="880" cy="980" r="42" fill="none" stroke="#00F5D4" stroke-width="3" opacity="0.45" />
+    <circle cx="150" cy="1020" r="22" fill="none" stroke="#7C5CFF" stroke-width="3" opacity="0.35" />
+  </g>
+
+  <!-- Central motif: bubble + jet -->
+  <g transform="translate(0,0)" filter="url(#softGlow)">
+    <circle cx="540" cy="560" r="125" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.18)" stroke-width="2" />
+    <circle cx="500" cy="525" r="18" fill="rgba(255,255,255,0.10)" />
+    <circle cx="582" cy="608" r="10" fill="rgba(255,255,255,0.07)" />
+    <path
+      d="M 540 612 C 560 648 598 678 650 688 C 705 699 752 680 792 648"
+      fill="none"
+      stroke="rgba(105,210,255,0.85)"
+      stroke-width="6"
+      stroke-linecap="round"
+    />
+    <path
+      d="M 540 612 C 540 700 530 770 510 842 C 494 900 480 948 470 1010"
+      fill="none"
+      stroke="rgba(0,245,212,0.75)"
+      stroke-width="8"
+      stroke-linecap="round"
+    />
+    <path
+      d="M 470 1010 L 452 980 L 488 986 Z"
+      fill="rgba(0,245,212,0.9)"
+    />
+  </g>
+
+  <!-- Title block -->
+  <g>
+    <text x="78" y="120" fill="rgba(255,255,255,0.92)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="44" font-weight="700">
+      流体論文ポスター
+    </text>
+    <text x="78" y="168" fill="rgba(255,255,255,0.80)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="26" font-weight="500">
+      泡から生まれる液体ジェット（接触角が“形”を決める）
+    </text>
+    <text x="78" y="208" fill="rgba(255,255,255,0.65)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="18" font-weight="500">
+      based on arXiv:2602.03185 · 2026-02-05
+    </text>
+  </g>
+
+  <!-- Content cards -->
+  <g>
+    <rect x="72" y="720" width="936" height="210" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2" />
+    <text x="108" y="770" fill="rgba(255,255,255,0.92)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">問い（Why）</text>
+    <text x="108" y="805" fill="rgba(255,255,255,0.78)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="18" font-weight="500">
+      <tspan x="108" dy="0">衝撃（impulse）を受けた気泡は、なぜ・どうやって液体ジェットを噴くのか？</tspan>
+      <tspan x="108" dy="26">“接触角”が変わると、ジェットの太さ・向き・発生条件はどう変化するのか？</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect x="72" y="952" width="936" height="224" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2" />
+    <text x="108" y="1002" fill="rgba(255,255,255,0.92)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">見どころ（What）</text>
+    <text x="108" y="1037" fill="rgba(255,255,255,0.78)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="18" font-weight="500">
+      <tspan x="108" dy="0">・気泡—固体—液体の幾何（接触角）を連続的に扱う枠組み</tspan>
+      <tspan x="108" dy="26">・ジェット形成を“形”で理解する（直感に落ちる）整理</tspan>
+      <tspan x="108" dy="26">・インクジェット、洗浄、気泡崩壊、マイクロ流体への示唆</tspan>
+    </text>
+  </g>
+
+  <g>
+    <rect x="72" y="1198" width="936" height="120" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" />
+    <text x="108" y="1246" fill="rgba(255,255,255,0.92)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="22" font-weight="700">リンク</text>
+    <text x="108" y="1284" fill="rgba(105,210,255,0.95)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="18" font-weight="600">
+      arXiv:2602.03185  /  “Impulse-induced liquid jets from bubbles with arbitrary contact angles”
+    </text>
+  </g>
+
+  <!-- Footer -->
+  <text x="78" y="1332" fill="rgba(255,255,255,0.42)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="14" font-weight="500">
+    Note: タイトルとメタ情報（RSSリンク）から作った“たたき台”です。要旨・本文に合わせて追記/修正してください。
+  </text>
+</svg>
+

@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1620" viewBox="0 0 1080 1620">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A18"/>
+      <stop offset="0.55" stop-color="#0B1A33"/>
+      <stop offset="1" stop-color="#06141E"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#69D2FF"/>
+      <stop offset="0.5" stop-color="#7C5CFF"/>
+      <stop offset="1" stop-color="#00F5D4"/>
+    </linearGradient>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix
+        in="blur"
+        type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.85 0"
+        result="glow"
+      />
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1080" height="1620" fill="url(#bg)"/>
+
+  <!-- Header -->
+  <g>
+    <path d="M72 92 H1008" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" opacity="0.7" filter="url(#glow)"/>
+    <text x="72" y="78" fill="rgba(255,255,255,0.92)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="40" font-weight="800">
+      arXiv physics.flu-dyn インフォグラフィック
+    </text>
+    <text x="72" y="122" fill="rgba(255,255,255,0.70)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="18" font-weight="600">
+      2026-02-05 · RSS抽出（タイトルベースの整理）
+    </text>
+    <text x="72" y="152" fill="rgba(255,255,255,0.50)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">
+      Source: 10_Projects/ST_channnel/01_News/Inbox/2026-02-05_RSS_Links.md
+    </text>
+  </g>
+
+  <!-- Highlights -->
+  <g>
+    <text x="72" y="210" fill="rgba(255,255,255,0.90)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="22" font-weight="800">
+      Highlights (6)
+    </text>
+    <text x="72" y="238" fill="rgba(255,255,255,0.60)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="14" font-weight="600">
+      液滴・界面 / 乱流・摩擦 / 高速流 / ML / 超流動・渦
+    </text>
+  </g>
+
+  <!-- Card helper: 444x150, 2 columns -->
+  <g>
+    <!-- Row 1 -->
+    <rect x="72" y="270" width="468" height="170" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+    <circle cx="112" cy="315" r="14" fill="none" stroke="#00F5D4" stroke-width="3"/>
+    <text x="140" y="322" fill="rgba(255,255,255,0.92)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="800">2602.03185</text>
+    <text x="112" y="358" fill="rgba(255,255,255,0.80)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="650">
+      <tspan x="112" dy="0">Impulse-induced liquid jets</tspan>
+      <tspan x="112" dy="22">from bubbles (contact angle)</tspan>
+    </text>
+    <text x="112" y="414" fill="rgba(105,210,255,0.85)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">Drops / Jets / Interface</text>
+
+    <rect x="540" y="270" width="468" height="170" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+    <circle cx="580" cy="315" r="14" fill="none" stroke="#69D2FF" stroke-width="3"/>
+    <text x="608" y="322" fill="rgba(255,255,255,0.92)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="800">2602.03187</text>
+    <text x="580" y="358" fill="rgba(255,255,255,0.80)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="650">
+      <tspan x="580" dy="0">Causal structure of</tspan>
+      <tspan x="580" dy="22">turbulent skin-friction drag</tspan>
+    </text>
+    <text x="580" y="414" fill="rgba(105,210,255,0.85)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">Turbulence / Wall flows</text>
+
+    <!-- Row 2 -->
+    <rect x="72" y="458" width="468" height="170" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+    <circle cx="112" cy="503" r="14" fill="none" stroke="#7C5CFF" stroke-width="3"/>
+    <text x="140" y="510" fill="rgba(255,255,255,0.92)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="800">2602.02971</text>
+    <text x="112" y="546" fill="rgba(255,255,255,0.80)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="650">
+      <tspan x="112" dy="0">Nonlinear electrohydrodynamics</tspan>
+      <tspan x="112" dy="22">of a surfactant-laden drop</tspan>
+    </text>
+    <text x="112" y="602" fill="rgba(105,210,255,0.85)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">EHD / Surfactants</text>
+
+    <rect x="540" y="458" width="468" height="170" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+    <circle cx="580" cy="503" r="14" fill="none" stroke="#00F5D4" stroke-width="3"/>
+    <text x="608" y="510" fill="rgba(255,255,255,0.92)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="800">2602.03065</text>
+    <text x="580" y="546" fill="rgba(255,255,255,0.80)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="650">
+      <tspan x="580" dy="0">Droplet volume conservation</tspan>
+      <tspan x="580" dy="22">correction in DNS turbulence</tspan>
+    </text>
+    <text x="580" y="602" fill="rgba(105,210,255,0.85)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">Multiphase / Numerics</text>
+
+    <!-- Row 3 -->
+    <rect x="72" y="646" width="468" height="170" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+    <circle cx="112" cy="691" r="14" fill="none" stroke="#69D2FF" stroke-width="3"/>
+    <text x="140" y="698" fill="rgba(255,255,255,0.92)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="800">2602.03617</text>
+    <text x="112" y="734" fill="rgba(255,255,255,0.80)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="650">
+      <tspan x="112" dy="0">Roughness-induced transition</tspan>
+      <tspan x="112" dy="22">on a blunt body at Mach 6</tspan>
+    </text>
+    <text x="112" y="790" fill="rgba(105,210,255,0.85)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">Hypersonics / Transition</text>
+
+    <rect x="540" y="646" width="468" height="170" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" stroke-width="1.2"/>
+    <circle cx="580" cy="691" r="14" fill="none" stroke="#7C5CFF" stroke-width="3"/>
+    <text x="608" y="698" fill="rgba(255,255,255,0.92)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="800">2602.02832</text>
+    <text x="580" y="734" fill="rgba(255,255,255,0.80)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="16" font-weight="650">
+      <tspan x="580" dy="0">Koopman autoencoders</tspan>
+      <tspan x="580" dy="22">for fluid dynamics forecasting</tspan>
+    </text>
+    <text x="580" y="790" fill="rgba(105,210,255,0.85)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="13" font-weight="700">ML / Forecasting</text>
+  </g>
+
+  <!-- Full list -->
+  <g>
+    <text x="72" y="874" fill="rgba(255,255,255,0.90)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="22" font-weight="800">
+      Full list (23)
+    </text>
+    <rect x="72" y="900" width="936" height="650" rx="22" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" stroke-width="1.2"/>
+
+    <!-- Left column -->
+    <text x="108" y="952" fill="rgba(255,255,255,0.78)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="650">
+      <tspan x="108" dy="0">2602.02865 · Direct PSD from structure functions</tspan>
+      <tspan x="108" dy="26">2602.02971 · Nonlinear electrohydrodynamics (drop)</tspan>
+      <tspan x="108" dy="26">2602.03065 · Droplet volume conservation in DNS</tspan>
+      <tspan x="108" dy="26">2602.03185 · Liquid jets from bubbles (contact angle)</tspan>
+      <tspan x="108" dy="26">2602.03187 · Turbulent skin-friction drag (causal)</tspan>
+      <tspan x="108" dy="26">2602.03362 · Electrowetting &amp; surface charge (drop)</tspan>
+      <tspan x="108" dy="26">2602.03497 · pH / carbon dissolution mapping (CO2)</tspan>
+      <tspan x="108" dy="26">2602.03617 · Roughness transition at Mach 6</tspan>
+      <tspan x="108" dy="26">2602.03844 · Stall cell dynamics (high Re)</tspan>
+      <tspan x="108" dy="26">2602.02531 · Hypersonic flow control (DRL)</tspan>
+      <tspan x="108" dy="26">2602.02616 · Space-time LATIN-PGD (compressible)</tspan>
+      <tspan x="108" dy="26">2602.02832 · Koopman autoencoders (forecasting)</tspan>
+    </text>
+
+    <!-- Right column -->
+    <text x="556" y="952" fill="rgba(255,255,255,0.78)" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="14" font-weight="650">
+      <tspan x="556" dy="0">2602.03518 · Vortex shedding in a superfluid</tspan>
+      <tspan x="556" dy="26">2602.03684 · Point vortex dynamics on surfaces</tspan>
+      <tspan x="556" dy="26">2412.09368 · Synchrotron X-Ray 4D multiphase (XMPI)</tspan>
+      <tspan x="556" dy="26">2502.18380 · Slip &amp; friction at fluid-solid interfaces</tspan>
+      <tspan x="556" dy="26">2510.03141 · Nonmodal growth in MHD shear flows</tspan>
+      <tspan x="556" dy="26">2512.04665 · Isotropization in turbulence onset</tspan>
+      <tspan x="556" dy="26">2512.15616 · Reduced model: droplet dynamics (viscosity)</tspan>
+      <tspan x="556" dy="26">2411.13397 · Stability of the inviscid power-law vortex</tspan>
+      <tspan x="556" dy="26">2504.12166 · Energy cascades in driven granular liquids</tspan>
+      <tspan x="556" dy="26">2509.15329 · Hot-electron closure (gyrokinetic plasma)</tspan>
+      <tspan x="556" dy="26">2510.16004 · PAINT: parallel-in-time neural twins</tspan>
+    </text>
+  </g>
+
+  <!-- Footer -->
+  <g opacity="0.7">
+    <path d="M72 1578 H1008" stroke="rgba(255,255,255,0.12)" stroke-width="2" stroke-linecap="round"/>
+    <text x="72" y="1606" fill="rgba(255,255,255,0.55)" font-family="Inter, 'Noto Sans JP', system-ui, -apple-system, sans-serif" font-size="12" font-weight="650">
+      Tip: 要旨を読める場合は、各行を「一文要約」に置き換えると完成度が上がります。
+    </text>
+  </g>
+</svg>
+

@@ -1,33 +1,62 @@
-# 🚀 AI × Manufacturing & Engineering RSS Feeds
+# === General Tech & Science ===
+https://techcrunch.com/feed/
+https://dev.classmethod.jp/feed/
+https://zenn.dev/feed/all
+https://qiita.com/popular-items/feed
+https://aws.amazon.com/blogs/machine-learning/feed/
 
-## 1. Deep Tech & Corporate Blogs
-- **Matlantis Blog**: `https://matlantis.com/ja/resources/blog/feed`
-- **NVIDIA Developer Blog**: `https://developer.nvidia.com/blog/feed`
-- **Google DeepMind Blog**: `https://deepmind.google/blog/rss.xml`
-- **Microsoft Research Blog**: `https://www.microsoft.com/en-us/research/feed/`
-- **Autodesk Design & Make**: `https://www.autodesk.com/blogs/design-and-make/feed`
-- **SimScale Blog**: `https://www.simscale.com/blog/feed/`
+# === AI & Machine Learning ===
+https://arxiv.org/rss/cs.AI
+https://arxiv.org/rss/cs.LG
+https://arxiv.org/rss/cs.CL
+https://arxiv.org/rss/stat.ML
+https://openai.com/news/rss.xml
+https://research.google/blog/rss/
+https://blog.google/innovation-and-ai/models-and-research/google-research/rss/
+https://blog.google/innovation-and-ai/models-and-research/google-deepmind/rss/
+https://huggingface.co/blog/feed.xml
+https://ucri.nict.go.jp/latestnews.rdf
+https://www.aist.go.jp/ctl/module/mid/27/tid/75/rss.php
 
-## 2. Professional Media & News
-- **MONOist (Manufacturing IT)**: `https://rss.itmedia.co.jp/rss/2.0/monoist.xml`
-- **Design News**: `https://www.designnews.com/rss.xml`
-- **The Register (Science)**: `https://www.theregister.com/offbeat/science/headlines.atom`
-- **Wired Science**: `https://www.wired.com/feed/category/science/latest/rss`
+# === Biotech & Longevity ===
+https://connect.biorxiv.org/biorxiv_xml.php?subject=crispr
+https://connect.biorxiv.org/biorxiv_xml.php?subject=synthetic_biology
+https://connect.biorxiv.org/biorxiv_xml.php?subject=neuroscience
+https://connect.biorxiv.org/biorxiv_xml.php?subject=genomics
+https://connect.medrxiv.org/medrxiv_xml.php?subject=drug_discovery
+https://connect.medrxiv.org/medrxiv_xml.php?subject=geriatric_medicine
+https://connect.medrxiv.org/medrxiv_xml.php?subject=neurology
+https://www.science.org/action/showFeed?feed=rss&jc=science&type=etoc
+https://www.science.org/action/showFeed?feed=rss&jc=science&type=axatoc
+https://www.cell.com/cell/inpress.rss
+https://www.cell.com/cell/current.rss
+https://www.cell.com/cell-metabolism/inpress.rss
+https://www.cell.com/cell-metabolism/current.rss
+https://www.natureasia.com/ja-jp/rss
+https://www.riken.jp/feed/press_feed/
+https://www.riken.jp/feed/news_feed/
+https://www.riken.jp/feed/events_feed/
+https://www.oist.jp/news-center.xml
 
-## 3. Academic & Papers
-- **arXiv (cs.LG - Machine Learning)**: `https://rss.arxiv.org/rss/cs.LG`
-- **arXiv (physics.flu-dyn - Fluid Dynamics)**: `https://rss.arxiv.org/rss/physics.flu-dyn`
-- **Nature Materials**: `https://www.nature.com/nmat.rss`
-- **Nature Computational Science**: `https://www.nature.com/natcomputsci.rss`
-- **Semantic Scholar Blog**: `https://blog.semanticscholar.org/feed`
-- **Materials Project (Discourse Updates)**: `https://discuss.materialsproject.org/posts.rss`
+# === Space & Astronomy ===
+https://www.nasa.gov/rss/dyn/breaking_news.rss
+https://cneos.jpl.nasa.gov/feed/news.xml
+https://www.jaxa.jp/rss/press_j.rdf
+https://www.jaxa.jp/rss/new_j.rdf
+https://www.nao.ac.jp/en/atom.xml
+https://arxiv.org/rss/astro-ph
 
-## 4. Visual & YouTube Channels
-- **Jousef Murad (Engineering/AI)**: `https://www.youtube.com/feeds/videos.xml?channel_id=UC9C0X8W-X_n_u_32P-6vLfg`
-- **Two Minute Papers (AI Research)**: `https://www.youtube.com/feeds/videos.xml?channel_id=UCbfYPyITQ-7l4upoX8nvctg`
-- **Veritasium (Science)**: `https://www.youtube.com/feeds/videos.xml?channel_id=UCHnyfMqiRRG1u-2MsSQLbXA`
-- **Physics Girl (Physics)**: `https://www.youtube.com/feeds/videos.xml?channel_id=UC7DdEm33SyaTDtWYGO2CwdA`
+# === Quantum & Computing ===
+https://arxiv.org/rss/quant-ph
+https://arxiv.org/rss/physics.app-ph
+https://www.science.org/action/showFeed?feed=rss&jc=sciadv&type=etoc
 
-## 5. Newsletters (Substack)
-- **Ahead of AI (Sebastian Raschka)**: `https://magazine.sebastianraschka.com/feed`
-- **Import AI (Jack Clark)**: `https://jack-clark.net/feed`
+# === Robotics & Hard Tech ===
+https://arxiv.org/rss/cs.RO
+https://arxiv.org/rss/eess.SY
+https://www.science.org/action/showFeed?feed=rss&jc=scirobotics&type=etoc
+
+# === Engineering & Chemistry ===
+https://arxiv.org/rss/physics.flu-dyn
+https://arxiv.org/rss/physics.chem-ph
+https://www.cell.com/heliyon/rss
