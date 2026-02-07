@@ -11,9 +11,12 @@ description: Inboxからのニュース選定、日刊記事作成、週刊ま�
 
 このスキルを使用して、以下のタスクを実行します：
 1.  **週次管理**: 現在の日付に基づき、適切な週次フォルダ（日曜始まり）を特定または作成する。
-2.  **記事作成**: Inbox内のRSSリストから重要記事を選定し、指定されたテンプレートでMarkdownを作成する。
-3.  **まとめ更新**: 週次まとめファイル（Folder Note）に記事リンクを追加する。
-4.  **デプロイ**: 変更をGitHubにプッシュし、公開サイトへ反映する。
+2.  **ニュース選定**: Inbox内のRSSリストをスコアリングし、重複統合して上位記事を抽出する。
+3.  **記事作成**: 選定記事を固定構成テンプレートでMarkdown化する。
+4.  **品質チェック**: 公開前に品質ゲートを実施する。
+5.  **タイトル最適化**: タイトル3案を作成し最終案を採用する。
+6.  **まとめ更新**: 週次まとめファイル（Folder Note）に記事リンクを追加する。
+6.  **デプロイ**: 変更をGitHubにプッシュし、公開サイトへ反映する。
 
 ## 使い方 (Usage)
 
@@ -52,9 +55,51 @@ python3 .agent/skills/ST_News_Publisher/scripts/get_weekly_target.py
 `01_News/Inbox` 内の最新のMarkdownファイル（例: `YYYY-MM-DD_RSS_Links.md`）を読み込む。
 **News Research Prompt** (`.agent/skills/ST_News_Publisher/assets/prompts/news_research_prompt.md`) の基準とフォーマットに従い、以下の処理を行う。
 
-1.  Inboxのリストから、技術的に重要でインパクトのあるニュースを選定する。
-2.  各ニュースについて、**必ずリンク先の本文をツールで取得・熟読し**、`TARGET_DIR` 内に日刊記事ファイル (`YYYY-MM-DD_Title.md`) を作成する。
-    - 内容は `.agent/skills/ST_News_Publisher/assets/templates/Daily_News_Template.md` に従うこと（テンプレートも移動している場合）。
+1.  **1コマンド実行**で RSS取得 + スコアリング + 重複統合を実行する。
+
+```bash
+python3 .agent/skills/ST_News_Publisher/scripts/run_news_pipeline.py
+```
+
+- 既存Inboxを使って再スコアリングのみ行う場合:
+
+```bash
+python3 .agent/skills/ST_News_Publisher/scripts/run_news_pipeline.py \
+  --skip-fetch \
+  --inbox 01_News/Inbox/YYYY-MM-DD_RSS_Links.md \
+  --top 8 \
+  --min-score 5.2
+```
+
+2.  （手動分割で実行する場合）Inboxをスコアリングし、重複統合して上位候補を抽出する。
+
+```bash
+python3 .agent/skills/ST_News_Publisher/scripts/select_news_candidates.py \
+  --inbox 01_News/Inbox/YYYY-MM-DD_RSS_Links.md \
+  --top 8 \
+  --min-score 5.2
+```
+
+3.  生成された `YYYY-MM-DD_Ranked_Candidates.md` の上位記事のみを執筆対象にする。
+4.  各ニュースについて、**必ずリンク先の本文をツールで取得・熟読し**、`TARGET_DIR` 内に日刊記事ファイル (`YYYY-MM-DD_Title.md`) を作成する。
+    - 内容は `.agent/skills/ST_News_Publisher/assets/templates/Daily_News_Template.md` の固定構成
+      (`何が起きた→なぜ重要か→技術ポイント→懐疑点・未確定要素→実務インパクト`)
+      に従うこと。
+5.  タイトルは「事実＋驚き＋具体性」で3案生成し、最終1案を採用する。
+
+```bash
+python3 .agent/skills/ST_News_Publisher/scripts/title_optimizer.py \
+  --fact "<事実>" \
+  --surprise "<驚き>" \
+  --specific "<具体性>"
+```
+
+6.  各記事に対して品質ゲートを実行し、PASSしたものだけ公開対象にする。
+
+```bash
+python3 .agent/skills/ST_News_Publisher/scripts/quality_gate.py \
+  --file 01_News/YYYY/YYYY-MM-DD--ST-news/YYYY-MM-DD_Title.md
+```
 
 ### 3. まとめファイルの更新
 
@@ -75,3 +120,28 @@ git push origin main
 ```
 
 プッシュ成功を確認し、ユーザーに完了を報告する。
+
+## 追加ルール（優先度A）
+
+### ニュース選定スコアリング
+- 4軸で0〜10採点:
+  - 技術新規性
+  - 実務影響
+  - 信頼性
+  - 鮮度
+- 総合スコア:
+  `0.35*技術新規性 + 0.30*実務影響 + 0.20*信頼性 + 0.15*鮮度`
+- 上位のみ採用する（通常5〜8件）。
+
+### 重複検知
+- URL正規化で同一URLを統合する。
+- タイトル類似度で近似重複を統合する。
+- 統合後の代表記事のみを執筆する。
+
+### 品質ゲート
+- 一次ソース有無
+- 日付整合
+- 主張と根拠の一致
+- 誇張表現除去
+
+上記4点が1つでもNGなら公開しない。
