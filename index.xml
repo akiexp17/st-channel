@@ -5,66 +5,6 @@
       <link>https://akiexp17.github.io/st-channel</link>
       <description>最新の10件 on ST Channel</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
-      <item>
-    <title>README</title>
-    <link>https://akiexp17.github.io/st-channel/articles/README</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/README</guid>
-    <description><![CDATA[ Articles Coming soon. ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item><item>
-    <title>2026-02-02_Playwrightを試してみた</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-02_Playwright%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-02_Playwright%E3%82%92%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%81%9F</guid>
-    <description><![CDATA[ Playwrightを試してみた 引用元 Playwrightを試してみた 概要 E2Eテストツールとして急速に普及している「Playwright」の導入と基本的な使用感のレビュー。 詳細レポート Microsoft製のブラウザ自動操作・テストツールであるPlaywrightのセットアップから簡単なテスト記述までを解説。SeleniumやPuppeteerと比較して、高速な実行速度、自動待機（Auto-wait）による安定性、モダンなブラウザ（Chromium, Firefox, WebKit）への標準対応が強みとして挙げられている。コード生成機能（Codegen）を使えばブラウザ操作をそのま... ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item><item>
-    <title>2026-02-02_SSHがキーストロークごとに100パケットを送信する問題をLLMとともに解決した話</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-02_SSH%E3%81%8C%E3%82%AD%E3%83%BC%E3%82%B9%E3%83%88%E3%83%AD%E3%83%BC%E3%82%AF%E3%81%94%E3%81%A8%E3%81%AB100%E3%83%91%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B%E5%95%8F%E9%A1%8C%E3%82%92LLM%E3%81%A8%E3%81%A8%E3%82%82%E3%81%AB%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-02_SSH%E3%81%8C%E3%82%AD%E3%83%BC%E3%82%B9%E3%83%88%E3%83%AD%E3%83%BC%E3%82%AF%E3%81%94%E3%81%A8%E3%81%AB100%E3%83%91%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E9%80%81%E4%BF%A1%E3%81%99%E3%82%8B%E5%95%8F%E9%A1%8C%E3%82%92LLM%E3%81%A8%E3%81%A8%E3%82%82%E3%81%AB%E8%A7%A3%E6%B1%BA%E3%81%97%E3%81%9F%E8%A9%B1</guid>
-    <description><![CDATA[ SSHがキーストロークごとに100パケットを送信する問題をLLMとともに解決した話 引用元 SSHがキーストロークごとに100パケットを送信する問題をLLMとともに解決した話 概要 SSH接続時にキーストロークごとに大量のパケットが送信されるパフォーマンス問題を、LLM（Claude）を活用して特定・解決した事例。 詳細レポート エンジニアがSSH接続の遅延調査中に、1回のキー入力で約100パケットもの通信が発生している異常を発見。WiresharkのログをLLMに解析させたところ、Nagleアルゴリズムと遅延ACKの相互作用による「愚かなウィンドウ症候群」類似の挙動が原因である可能性が示唆さ... ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item><item>
-    <title>2026-02-02_画像生成AIをPCで簡単に実行できる「ComfyUI」のインストール手順</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-02_%E7%94%BB%E5%83%8F%E7%94%9F%E6%88%90AI%E3%82%92PC%E3%81%A7%E7%B0%A1%E5%8D%98%E3%81%AB%E5%AE%9F%E8%A1%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%8CComfyUI%E3%80%8D%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%89%8B%E9%A0%86</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-02_%E7%94%BB%E5%83%8F%E7%94%9F%E6%88%90AI%E3%82%92PC%E3%81%A7%E7%B0%A1%E5%8D%98%E3%81%AB%E5%AE%9F%E8%A1%8C%E3%81%A7%E3%81%8D%E3%82%8B%E3%80%8CComfyUI%E3%80%8D%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%89%8B%E9%A0%86</guid>
-    <description><![CDATA[ 画像生成AIをPCで簡単に実行できる「ComfyUI」のインストール手順 引用元 画像生成AIをPCで簡単に実行できる「ComfyUI」のインストール手順＆最初の画像を生成するまでの手順まとめ 概要 ノードベースで柔軟な画像生成フローを構築できる「ComfyUI」の導入ガイド。 詳細レポート Stable Diffusionなどの画像生成AIをローカルPCで動かすためのGUIツール「ComfyUI」の最新インストール手順がまとめられている。従来必要だった複雑なPython環境構築が不要になり、スタンドアロンのポータブル版を使用することで、ダウンロード・解凍・実行の3ステップで環境が整うようにな... ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item><item>
-    <title>2026-02-03_DAJ_LLM_Judge</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_DAJ_LLM_Judge</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_DAJ_LLM_Judge</guid>
-    <description><![CDATA[ DAJ: Data-Reweighted LLM Judge for Test-Time Scaling in Code Generation 引用元 DAJ: Data-Reweighted LLM Judge for Test-Time Scaling in Code Generation 概要 コード生成におけるTest-Time Scaling（推論時の計算量増加による性能向上）のための新しいLLM Judge学習フレームワーク「DAJ」の提案。データの重要度を重み付け（Reweighting）して学習させることで、SOTA性能を達成した。 背景 推論時に複数の候補を生成して最良のもの... ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item><item>
-    <title>2026-02-03_ImportAI_Moltbook</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_ImportAI_Moltbook</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_ImportAI_Moltbook</guid>
-    <description><![CDATA[ Into the mist: Moltbook, agent ecologies, and the internet in transition 引用元 Import AI 443: Into the mist: Moltbook, agent ecologies, and the internet in transition 概要 Jack Clark氏によるニュースレター「Import AI」の最新号では、AIエージェント専用のSNS「Moltbook」の登場と、それが示唆する「エージェント経済圏」やインターネットの変質について特集している。 背景 インターネットは人間同士の会話の場から、... ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item><item>
-    <title>2026-02-03_NVIDIA_MoE_Optimization</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_NVIDIA_MoE_Optimization</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_NVIDIA_MoE_Optimization</guid>
-    <description><![CDATA[ Optimizing Communication for Mixture-of-Experts Training with Hybrid Expert Parallel 引用元 Optimizing Communication for Mixture-of-Experts Training with Hybrid Expert Parallel 概要 NVIDIAは、DeepSeek-V3のような大規模なMixture-of-Experts (MoE) モデルの学習においてボトルネックとなる通信オーバーヘッドと負荷分散の課題を解決するため、Megatron Coreでの最適化手法（Hybrid... ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item><item>
-    <title>2026-02-03_Unified_LoRA_Study</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_Unified_LoRA_Study</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_Unified_LoRA_Study</guid>
-    <description><![CDATA[ A Unified Study of LoRA Variants: Taxonomy, Review, Codebase, and Empirical Evaluation 引用元 A Unified Study of LoRA Variants: Taxonomy, Review, Codebase, and Empirical Evaluation 概要 パラメータ効率の良いファインチューニング手法「LoRA」とその多数の派生手法について、体系的な分類と統一的な評価を行った研究。結論として、**「適切に調整すれば、オリジナルのLoRAがほとんどの派生手法と同等以上の性能を出す」**という重... ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item><item>
-    <title>2026-02-03_Why_GRPO_Needs_Normalization</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_Why_GRPO_Needs_Normalization</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-03_Why_GRPO_Needs_Normalization</guid>
-    <description><![CDATA[ Why GRPO Needs Normalization: A Local-Curvature Perspective on Adaptive Gradients 引用元 Why GRPO Needs Normalization: A Local-Curvature Perspective on Adaptive Gradients 概要 DeepSeek-R1などで採用されている強化学習手法「GRPO (Group Relative Policy Optimization)」において、なぜ「標準偏差による正規化」が重要なのかを理論的・実験的に解明した研究。正規化が実質的に適応的勾配（Adap... ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item><item>
-    <title>2026-02-04_Google-Stitch-Antigravity</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-04_Google-Stitch-Antigravity</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-04_Google-Stitch-Antigravity</guid>
-    <description><![CDATA[ AI開発フローの実験: Google Stitchでデザイン、Antigravityで実装 参照元 Qiita: UIデザインから実装までをAIエージェントに丸投げしてみた 3行まとめ 「ChatGPTで要件定義 → Google StitchでUI生成 → Antigravity × Claude Opus 4.5でFlutter実装」という完全AI任せの開発フローを検証。 Google Stitchはプロンプトから高品質なUIデザインを生成し、AntigravityはMCP（Model Context Protocol）経由でこれを読み込み、コードに変換。 ワイヤーフレーム作成や手動コーデ... ]]></description>
-    <pubDate>Wed, 04 Feb 2026 10:50:49 GMT</pubDate>
-  </item>
+      
     </channel>
   </rss>
