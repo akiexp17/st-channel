@@ -4,3 +4,8 @@
 .DS_Store
 01_News/Inbox/
 99_System/.venv/
+
+# Track only content folders for publishing workflow
+.agent/
+.github/
+99_System/
