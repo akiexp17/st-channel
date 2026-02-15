@@ -6,65 +6,65 @@
       <description>最新の10件 on ST Channel</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>2026-02-07_SCALAR_materials_foundation_models_note</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-07_SCALAR_materials_foundation_models_note</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-07_SCALAR_materials_foundation_models_note</guid>
-    <description><![CDATA[ 高精度なのに危ない？ SCALAR論文が暴く材料AIの盲点 “当たるAI”ではなく、“壊れ方を管理できるAI”を選ぶ時代へ キャッチコピー: 精度が高くても壊れるAIを、指標のトレードオフで見抜く。 「この材料候補は当たりです」 AIにそう言われれば、つい信じたくなります。 でも、その候補が実験段階で物理的に破綻していたら、失うのは数値ではなく時間と研究予算です。 実は今、材料科学AIの現場で起きているのはこのタイプの失敗です。 精度は高い。なのに信用しきれない。 その矛盾に真正面から挑んだのが、今回の論文です。 SCALAR: Quantifying Structural Hallucina... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_agentdiff_enterprise_api_benchmark</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_agentdiff_enterprise_api_benchmark</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_agentdiff_enterprise_api_benchmark</guid>
+    <description><![CDATA[ API自動化の評価を出力結果から状態整合へ、Agent-Diffが示す実運用テストの再設計 成功レスポンスでも壊れるシステムを見抜く評価軸 返り値が正しくても、業務状態が壊れていれば失敗である。 結論（先に要点） Agent-Diffは、Enterprise APIタスクにおけるLLMエージェント評価で、最終応答中心の判定からState-Diff（状態差分）中心の判定へ軸を移した。コード実行を通じてAPI操作を再現し、結果の見た目ではなく内部状態の整合で評価することで、業務自動化に特有の潜在障害を検出しやすくする。APIエージェントの品質保証は、自然言語評価だけでは不十分である。 対象論文: ... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item><item>
-    <title>README</title>
-    <link>https://akiexp17.github.io/st-channel/articles/README</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/README</guid>
-    <description><![CDATA[ Articles 2026 高精度なのに危ない？ SCALAR論文が暴く材料AIの盲点 キャッチコピー: 精度が高くても壊れるAIを、指標のトレードオフで見抜く。 . ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_agentnoisebench_tool_agent_robustness</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_agentnoisebench_tool_agent_robustness</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_agentnoisebench_tool_agent_robustness</guid>
+    <description><![CDATA[ ノイズでどこまで崩れるか、AgentNoiseBenchが示すツール利用エージェントの実力差 高精度評価の外側にある運用障害を先に測る 壊れる入力を知らずに導入すると、壊れる頻度だけが本番で分かる。 結論（先に要点） AgentNoiseBenchは、Tool-Using LLM Agentsの頑健性をノイズ条件下で比較するための評価基盤を提案した。理想条件での性能が高くても、軽微な入力揺らぎで手順が破綻するなら実運用リスクは高い。ノイズ耐性の定量化を標準試験に含めることが、エージェント品質保証の最低ラインになりつつある。 対象論文: AgentNoiseBench: Benchmarking... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item><item>
-    <title>Python_Libraries_Review</title>
-    <link>https://akiexp17.github.io/st-channel/articles/test/Python_Libraries_Review</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/test/Python_Libraries_Review</guid>
-    <description><![CDATA[ 【Python流体工学】Fluidsライブラリで配管設計を完全自動化する NOTE この記事は、Pythonの科学技術計算ライブラリ「Fluids」を用いて、実際のプラント配管設計（ポンプ揚程計算）をどう効率化できるかを深掘りした技術記事です。 エンジニアリングの現場では、いまだにExcelで複雑な配管抵抗計算を行っているケースが少なくありません。しかし、Excelでは「物性値の温度依存性」や「配管スケジュールの変更」に柔軟に対応できず、ミスも起きがちです。 そこで、Pythonの決定版流体ライブラリFluidsを紹介します。これは、単なる計算式集ではなく、産業界で標準的に使われる膨大な工学デ... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_cav_lane_change_collaborative_safety_shield</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_cav_lane_change_collaborative_safety_shield</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_cav_lane_change_collaborative_safety_shield</guid>
+    <description><![CDATA[ 合流は自動運転の鬼門、協調セーフティシールドで境界ケースを先に潰す 走れることより、危険局面で破綻しないことが実装の条件になる。 結論（先に要点） A Collaborative Safety Shield for CAV lane changesは、混雑オンランプ合流において、安全制約を上位レイヤで適用する協調型保護機構を提案した。通常の方策最適化だけでは取りこぼしやすい境界ケースに対し、危険行動を抑制しつつ交通効率を維持する狙いである。自動運転の実運用では、性能改善より先に安全破綻モードを塞ぐ設計が必要だと示す。 対象論文: A Collaborative Safety Shield fo... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item><item>
-    <title>2026-02-15_RSS_Links</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/Inbox/2026-02-15_RSS_Links</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/Inbox/2026-02-15_RSS_Links</guid>
-    <description><![CDATA[ 2026-02-15 RSS Links Fetched at: 09:23:55 Total: 31 items TechCrunch Homeland Security reportedly sent hundreds of subpoenas seeking to unmask anti-ICE accounts Is safety ‘dead’ at xAI? In a changed VC landscape, this exec is doubling down on overlooked founders ‘Clueless’ -inspired app Alta partner... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_dayahead_power_market_security</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_dayahead_power_market_security</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_dayahead_power_market_security</guid>
+    <description><![CDATA[ 電力市場モデルは効率だけで評価できるか、day-aheadベンチが示すセキュリティ含意 最適化と安全性を同時に見ない市場設計の限界 コスト最小化の勝者が、運用安全の勝者とは限らない。 結論（先に要点） 本研究は、電力システムのday-ahead market modelをベンチマークしながら、セキュリティ含意を同時に検討する視点を提示した。経済効率中心の比較では見落とされがちな脆弱性や運用リスクを、評価段階で可視化する重要性を示している。市場設計の意思決定は、価格性能と安全性を同時最適化する方向に進むべきである。 対象論文: A day-ahead market model for power... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item><item>
-    <title>2026-02-06_RIKEN_Catalyst_Switching</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_RIKEN_Catalyst_Switching</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_RIKEN_Catalyst_Switching</guid>
-    <description><![CDATA[ 1種類の触媒で4種類の有機反応を自在に切替 引用元 理化学研究所 プレスリリース 概要 理化学研究所の研究グループは、たった1種類の触媒を用いながら、反応試薬を変えるだけで4種類の全く異なる有機反応を選択的に実現する「四重スイッチング触媒反応系」の開発に成功した。これにより、同一の原料から多様な化合物を迅速につくり分けることが可能になる。 詳細 技術の核心: シリコンナノワイヤー表面にパラジウムを固定化した触媒（SiNA-Pd）を使用。 制御手法: マイクロ波照射による選択的加熱と、トリエタノールアミン（TEOA）などの添加剤の有無や種類を組み合わせることで、反応パスを制御する。 成果: 従来... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_ddl2propbank_agent_devex_benchmark</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_ddl2propbank_agent_devex_benchmark</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_ddl2propbank_agent_devex_benchmark</guid>
+    <description><![CDATA[ 精度だけでは選べない、DDL2PropBank Agentが示すマルチエージェント開発体験の評価軸 実装できるかではなく、運用し続けられるかを測るベンチマークへ 成功率が同じでも、保守コストは同じではない。 結論（先に要点） DDL2PropBank Agentは、マルチエージェント基盤の比較に「Developer Experience（開発体験）」を明示的に持ち込んだ。Relational Schema Mappingという具体タスクに固定することで、単なる最終精度では見えない実装難易度、失敗再現性、修正容易性を比較しやすくしている。エージェント導入は性能順位だけで決めず、運用摩擦まで含めて... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item><item>
-    <title>2026-02-06_Robotics_RoboPaint</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Robotics_RoboPaint</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Robotics_RoboPaint</guid>
-    <description><![CDATA[ RoboPaint: 人間のデモからロボットデータを「描く」 引用元 arXiv:2602.05325 概要 ロボットの巧緻な操作（Dexterous Manipulation）を学習させるには大量のデータが必要だが、遠隔操作による収集はコストが高い。「RoboPaint」は、人間の手の動きを動画から抽出し、それをロボットハンドの動きに変換（リターゲット）してシミュレーター内で実行・再撮影することで、ロボット用の学習データを生成するパイプラインである。 詳細 Real-Sim-Real: 人間の実演動画（Real）→ シミュレーションでのロボット動作生成（Sim）→ 実機でのポリシー適用（Re... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_gas_phase_iodine_electronic_strong_coupling</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_gas_phase_iodine_electronic_strong_coupling</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_gas_phase_iodine_electronic_strong_coupling</guid>
+    <description><![CDATA[ 気相で強結合を観る価値、ヨウ素分子研究が開く光化学の再現性向上 溶媒要因を外せると、反応制御の本当に効く変数が見えてくる。 結論（先に要点） Electronic Strong Coupling of Gas-Phase Molecular Iodineは、気相環境で分子と光場の電子強結合を扱う方向性を示した。溶液系で混ざりがちな要因を分離しやすく、反応経路制御の設計則を明確化するうえで重要である。化学・材料開発では、経験則中心の条件探索から物理機構中心の条件設計へ移れる可能性がある。 対象論文: Electronic Strong Coupling of Gas-Phase Molecula... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item><item>
-    <title>2026-02-06_Robotics_VLN_Pilot</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Robotics_VLN_Pilot</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Robotics_VLN_Pilot</guid>
-    <description><![CDATA[ VLN-Pilot: 屋内ドローン自律操縦のためのVLLM 引用元 arXiv:2602.05552 概要 大規模視覚言語モデル（VLLM）をドローンのパイロットとして機能させる「VLN-Pilot」が登場。GPSが使えない屋内環境において、自然言語の指示に従って自律的に飛行経路を計画し、実行するフレームワークである。 詳細 言語と視覚の統合: 「赤いソファーのところへ行って」といった抽象的な指示を、カメラ映像と照らし合わせて具体的な移動コマンドに変換する。 自律性: 従来の幾何学的なマップ作成やルールベースの制御に頼らず、VLLMの常識推論能力（空間認識、障害物回避）を活用。 応用: 施設内... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_lingxidiagbench_psychiatric_llm_benchmark</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_lingxidiagbench_psychiatric_llm_benchmark</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_lingxidiagbench_psychiatric_llm_benchmark</guid>
+    <description><![CDATA[ 精神科AIは正答率だけで測れない、LingxiDiagBenchが示す診断評価の再設計 返答が自然でも安全とは限らない。診断過程そのものを監査する時代に入った。 結論（先に要点） LingxiDiagBenchは、中国語の精神科相談を題材に、LLMの診断性能を多エージェント構成で評価する枠組みを提示した。重要なのは「答えが合っているか」だけでなく、「どう推論したか」「危険な省略をしていないか」を評価対象に含めた点である。医療対話AIの運用前検証は、単発QA指標からプロセス監査型へ移る必要がある。 対象論文: LingxiDiagBench: A Multi-Agent Framework fo... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item><item>
-    <title>2026-02-07_Anthropic_Opus_4.6_Agent_Teams</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_Anthropic_Opus_4.6_Agent_Teams</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_Anthropic_Opus_4.6_Agent_Teams</guid>
-    <description><![CDATA[ 100万トークン文脈とエージェント編成、AnthropicがOpus 4.6を公開 タイトル候補（事実＋驚き＋具体性） AnthropicがOpus 4.6を公開、複数エージェントを束ねる新機能を提示 100万トークン文脈とエージェント編成、AnthropicがOpus 4.6を公開 Opus 4.6登場、Anthropicが「agent teams」を前面化 採用理由: 数値（100万トークン）と機能（agent teams）が同時に伝わり、実務読者の関心点に直結するため。 引用元 Anthropic releases Opus 4.6 with new ‘agent teams’ 公開日(... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_oblique_wave_streak_reinforcement_flow_control</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_oblique_wave_streak_reinforcement_flow_control</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_oblique_wave_streak_reinforcement_flow_control</guid>
+    <description><![CDATA[ 乱流遷移の前兆をどう押さえるか、斜行波からストリーク増幅までを一本化した解析 先に支配帯域を絞れれば、CFDの探索コストは大きく下がる。 結論（先に要点） 本研究は、斜行波強制からストリーク増幅までを摂動ベースの周波数応答でつなぐ枠組みを示した。流れが不安定化する経路を周波数領域で整理できるため、制御入力や設計変更の優先順位を早期に決めやすくなる。流体開発では「全部試す」から「効く帯域に集中する」へ移行する実務価値がある。 対象論文: From oblique-wave forcing to streak reinforcement: A perturbation-based frequenc... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item><item>
-    <title>2026-02-07_ContextBench_Coding_Agent_Retrieval</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_ContextBench_Coding_Agent_Retrieval</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_ContextBench_Coding_Agent_Retrieval</guid>
-    <description><![CDATA[ 66リポジトリ・1,136タスクで検証、ContextBenchが示す「文脈取得」ボトルネック タイトル候補（事実＋驚き＋具体性） ContextBench公開、コーディングエージェントの文脈取得性能を測る新ベンチマーク 66リポジトリ・1,136タスクで検証、ContextBenchが示す「文脈取得」ボトルネック コード生成精度の前に壁、ContextBenchがRAG前段の弱点を可視化 採用理由: 規模（66/1,136）と論点（文脈取得）を同時に示し、読者が価値を即座に理解できるため。 引用元 ContextBench: A Benchmark for Context Retrieval... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_plasma_ptau217_apoe_preclinical_decline</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_plasma_ptau217_apoe_preclinical_decline</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_plasma_ptau217_apoe_preclinical_decline</guid>
+    <description><![CDATA[ 症状前アルツハイマー予測の現実解、p-tau217とAPOE統合評価の実装ポイント 介入が遅い問題は、診断技術より選定タイミングの問題でもある。 結論（先に要点） 本研究は、血漿p-tau217とAPOE遺伝型の組み合わせが、アルツハイマー病の前臨床認知低下予測で有用かを検討した。重要なのは、侵襲性の高い検査に依存せず、日常診療に近い情報でリスク層別化を進める方向を示した点である。予防介入や試験デザインの入口基準を更新する可能性がある。 対象論文: Predictive Value of Plasma P-tau217 and APOE Genotype for Preclinical Cog... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item><item>
-    <title>2026-02-07_Daily_Digest</title>
-    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_Daily_Digest</link>
-    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_Daily_Digest</guid>
-    <description><![CDATA[ 2026-02-07 News Digest 本日の注目記事5選のまとめです。 1. ]]></description>
-    <pubDate>Sun, 15 Feb 2026 00:47:05 GMT</pubDate>
+    <title>2026-02-12_shrec_social_reasoning_dataset</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_shrec_social_reasoning_dataset</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_shrec_social_reasoning_dataset</guid>
+    <description><![CDATA[ ロボット対話の「社会性」を測る、SHREC Datasetが切り開く評価の新基準 会話が通じるだけでは不十分な時代のベンチマーク 丁寧な日本語でも、社会的に不自然なら受け入れられない。 結論（先に要点） SHREC Datasetは、Social Human Robot Embodied Conversationにおける社会的推論能力を評価するためのデータセットを提示し、基盤モデル比較の新しい評価軸を示した。文法的正確さや一般知識だけでは見えない「場面理解」「配慮ある応答」の差を定量化できる点が重要である。対話ロボットの実装では、言語性能評価に社会推論評価を組み込む必要がある。 対象論文: S... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:53:03 GMT</pubDate>
   </item>
     </channel>
   </rss>
