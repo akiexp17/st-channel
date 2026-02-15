@@ -1,11 +1,16 @@
-99_System/quartz/node_modules
-99_System/quartz/.cache
-99_System/quartz/public
+# System files
 .DS_Store
-01_News/Inbox/
-99_System/.venv/
+*.log
 
-# Track only content folders for publishing workflow
-.agent/
-.github/
-99_System/
+# Dependencies and Virtual Environments
+node_modules/
+.venv/
+__pycache__/
+
+# Quartz specific
+99_System/quartz/node_modules/
+99_System/quartz/.cache/
+99_System/quartz/public/
+
+# News specific
+01_News/Inbox/
