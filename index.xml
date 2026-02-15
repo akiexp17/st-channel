@@ -5,6 +5,66 @@
       <link>https://akiexp17.github.io/st-channel</link>
       <description>最新の10件 on ST Channel</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
-      
+      <item>
+    <title>Python_Libraries_Review</title>
+    <link>https://akiexp17.github.io/st-channel/articles/test/Python_Libraries_Review</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/test/Python_Libraries_Review</guid>
+    <description><![CDATA[ 【Python流体工学】Fluidsライブラリで配管設計を完全自動化する NOTE この記事は、Pythonの科学技術計算ライブラリ「Fluids」を用いて、実際のプラント配管設計（ポンプ揚程計算）をどう効率化できるかを深掘りした技術記事です。 エンジニアリングの現場では、いまだにExcelで複雑な配管抵抗計算を行っているケースが少なくありません。しかし、Excelでは「物性値の温度依存性」や「配管スケジュールの変更」に柔軟に対応できず、ミスも起きがちです。 そこで、Pythonの決定版流体ライブラリFluidsを紹介します。これは、単なる計算式集ではなく、産業界で標準的に使われる膨大な工学デ... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item><item>
+    <title>2026-02-07_SCALAR_materials_foundation_models_note</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-07_SCALAR_materials_foundation_models_note</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-07_SCALAR_materials_foundation_models_note</guid>
+    <description><![CDATA[ 高精度なのに危ない？ SCALAR論文が暴く材料AIの盲点 “当たるAI”ではなく、“壊れ方を管理できるAI”を選ぶ時代へ キャッチコピー: 精度が高くても壊れるAIを、指標のトレードオフで見抜く。 「この材料候補は当たりです」 AIにそう言われれば、つい信じたくなります。 でも、その候補が実験段階で物理的に破綻していたら、失うのは数値ではなく時間と研究予算です。 実は今、材料科学AIの現場で起きているのはこのタイプの失敗です。 精度は高い。なのに信用しきれない。 その矛盾に真正面から挑んだのが、今回の論文です。 SCALAR: Quantifying Structural Hallucina... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item><item>
+    <title>README</title>
+    <link>https://akiexp17.github.io/st-channel/articles/README</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/README</guid>
+    <description><![CDATA[ Articles 2026 高精度なのに危ない？ SCALAR論文が暴く材料AIの盲点 キャッチコピー: 精度が高くても壊れるAIを、指標のトレードオフで見抜く。 . ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item><item>
+    <title>2026-02-06_AI_EuroLLM_22B</title>
+    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_AI_EuroLLM_22B</link>
+    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_AI_EuroLLM_22B</guid>
+    <description><![CDATA[ EuroLLM-22B: 欧州言語に特化した22Bモデル 引用元 arXiv:2602.05879 概要 欧州の言語的多様性に対応するため、EUの全24公用語を含む35言語をカバーする220億パラメータのLLM「EuroLLM-22B」が公開された。既存のLLMでは十分にサポートされていなかった欧州言語の処理能力を強化することを目的としている。 詳細 多言語対応: 英語中心のモデルとは異なり、欧州各国の言語や文化を深く理解するように設計されている。 性能: 広範な多言語ベンチマークにおいて、同規模の他のオープンモデルと競合、あるいは凌駕する性能（推論、指示追従、翻訳）を示した。 オープンソース... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item><item>
+    <title>2026-02-06_Daily_Digest</title>
+    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Daily_Digest</link>
+    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Daily_Digest</guid>
+    <description><![CDATA[ 2026-02-06 News Digest 本日の注目記事5選のまとめです。 1. ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item><item>
+    <title>2026-02-06_RIKEN_Catalyst_Switching</title>
+    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_RIKEN_Catalyst_Switching</link>
+    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_RIKEN_Catalyst_Switching</guid>
+    <description><![CDATA[ 1種類の触媒で4種類の有機反応を自在に切替 引用元 理化学研究所 プレスリリース 概要 理化学研究所の研究グループは、たった1種類の触媒を用いながら、反応試薬を変えるだけで4種類の全く異なる有機反応を選択的に実現する「四重スイッチング触媒反応系」の開発に成功した。これにより、同一の原料から多様な化合物を迅速につくり分けることが可能になる。 詳細 技術の核心: シリコンナノワイヤー表面にパラジウムを固定化した触媒（SiNA-Pd）を使用。 制御手法: マイクロ波照射による選択的加熱と、トリエタノールアミン（TEOA）などの添加剤の有無や種類を組み合わせることで、反応パスを制御する。 成果: 従来... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item><item>
+    <title>2026-02-06_Robotics_RoboPaint</title>
+    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Robotics_RoboPaint</link>
+    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Robotics_RoboPaint</guid>
+    <description><![CDATA[ RoboPaint: 人間のデモからロボットデータを「描く」 引用元 arXiv:2602.05325 概要 ロボットの巧緻な操作（Dexterous Manipulation）を学習させるには大量のデータが必要だが、遠隔操作による収集はコストが高い。「RoboPaint」は、人間の手の動きを動画から抽出し、それをロボットハンドの動きに変換（リターゲット）してシミュレーター内で実行・再撮影することで、ロボット用の学習データを生成するパイプラインである。 詳細 Real-Sim-Real: 人間の実演動画（Real）→ シミュレーションでのロボット動作生成（Sim）→ 実機でのポリシー適用（Re... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item><item>
+    <title>2026-02-06_Robotics_VLN_Pilot</title>
+    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Robotics_VLN_Pilot</link>
+    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-06_Robotics_VLN_Pilot</guid>
+    <description><![CDATA[ VLN-Pilot: 屋内ドローン自律操縦のためのVLLM 引用元 arXiv:2602.05552 概要 大規模視覚言語モデル（VLLM）をドローンのパイロットとして機能させる「VLN-Pilot」が登場。GPSが使えない屋内環境において、自然言語の指示に従って自律的に飛行経路を計画し、実行するフレームワークである。 詳細 言語と視覚の統合: 「赤いソファーのところへ行って」といった抽象的な指示を、カメラ映像と照らし合わせて具体的な移動コマンドに変換する。 自律性: 従来の幾何学的なマップ作成やルールベースの制御に頼らず、VLLMの常識推論能力（空間認識、障害物回避）を活用。 応用: 施設内... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item><item>
+    <title>2026-02-07_Anthropic_Opus_4.6_Agent_Teams</title>
+    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_Anthropic_Opus_4.6_Agent_Teams</link>
+    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_Anthropic_Opus_4.6_Agent_Teams</guid>
+    <description><![CDATA[ 100万トークン文脈とエージェント編成、AnthropicがOpus 4.6を公開 タイトル候補（事実＋驚き＋具体性） AnthropicがOpus 4.6を公開、複数エージェントを束ねる新機能を提示 100万トークン文脈とエージェント編成、AnthropicがOpus 4.6を公開 Opus 4.6登場、Anthropicが「agent teams」を前面化 採用理由: 数値（100万トークン）と機能（agent teams）が同時に伝わり、実務読者の関心点に直結するため。 引用元 Anthropic releases Opus 4.6 with new ‘agent teams’ 公開日(... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item><item>
+    <title>2026-02-07_ContextBench_Coding_Agent_Retrieval</title>
+    <link>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_ContextBench_Coding_Agent_Retrieval</link>
+    <guid>https://akiexp17.github.io/st-channel/news/01_News/2026/2026-02-01--ST-news/2026-02-07_ContextBench_Coding_Agent_Retrieval</guid>
+    <description><![CDATA[ 66リポジトリ・1,136タスクで検証、ContextBenchが示す「文脈取得」ボトルネック タイトル候補（事実＋驚き＋具体性） ContextBench公開、コーディングエージェントの文脈取得性能を測る新ベンチマーク 66リポジトリ・1,136タスクで検証、ContextBenchが示す「文脈取得」ボトルネック コード生成精度の前に壁、ContextBenchがRAG前段の弱点を可視化 採用理由: 規模（66/1,136）と論点（文脈取得）を同時に示し、読者が価値を即座に理解できるため。 引用元 ContextBench: A Benchmark for Context Retrieval... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 00:36:39 GMT</pubDate>
+  </item>
     </channel>
   </rss>
