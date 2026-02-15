@@ -1,5 +1,8 @@
 # === General Tech & Science ===
 https://techcrunch.com/feed/
+https://hnrss.org/newest?points=100
+https://www.technologyreview.com/feed/
+https://feeds.arstechnica.com/arstechnica/technology-lab
 https://dev.classmethod.jp/feed/
 https://zenn.dev/feed/all
 https://qiita.com/popular-items/feed
