@@ -6,65 +6,65 @@
       <description>最新の10件 on ST Channel</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Python_Libraries_Review</title>
+    <link>https://akiexp17.github.io/st-channel/articles/test/Python_Libraries_Review</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/test/Python_Libraries_Review</guid>
+    <description><![CDATA[ 【Python流体工学】Fluidsライブラリで配管設計を完全自動化する NOTE この記事は、Pythonの科学技術計算ライブラリ「Fluids」を用いて、実際のプラント配管設計（ポンプ揚程計算）をどう効率化できるかを深掘りした技術記事です。 エンジニアリングの現場では、いまだにExcelで複雑な配管抵抗計算を行っているケースが少なくありません。しかし、Excelでは「物性値の温度依存性」や「配管スケジュールの変更」に柔軟に対応できず、ミスも起きがちです。 そこで、Pythonの決定版流体ライブラリFluidsを紹介します。これは、単なる計算式集ではなく、産業界で標準的に使われる膨大な工学デ... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
+  </item><item>
+    <title>2026-02-10_argos_functional_safety_embodied_ai</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-10_argos_functional_safety_embodied_ai</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-10_argos_functional_safety_embodied_ai</guid>
+    <description><![CDATA[ Embodied AIの安全設計を自動化できるか、ARGOSが示した要件合成の現実解 実装後に直す安全ではなく、要件段階で作る安全へ。 結論（先に要点） ARGOSは、Embodied AI向けの機能安全要件を属性誘導の組合せ推論で自動合成する枠組みを提示した。安全を「テスト段階の検出問題」から「要件段階の設計問題」へ戻す点に、実務上の価値がある。 対象論文: ARGOS: Automated Functional Safety Requirement Synthesis for Embodied AI via Attribute-Guided Combinatorial Reasoning ... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
+  </item><item>
+    <title>2026-02-10_latentchem_latent_thinking_chemical_reasoning</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-10_latentchem_latent_thinking_chemical_reasoning</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-10_latentchem_latent_thinking_chemical_reasoning</guid>
+    <description><![CDATA[ 化学LLMは文章で考えるべきか、LatentChemが提案した潜在思考ルート 化学推論のボトルネックはモデル規模より、推論表現の設計にある。 結論（先に要点） LatentChemは、化学推論におけるTextual CoTの曖昧性と冗長性を課題化し、連続潜在状態で推論するlatent thinkingを提案した。化学領域では「推論をどう書くか」より「推論をどう表現するか」が性能の鍵になる可能性が高い。 対象論文: LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning 公開日: 2026-02-08 URL: ... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
+  </item><item>
+    <title>2026-02-10_parkinson_tabular_biomedical_dl_comparison</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-10_parkinson_tabular_biomedical_dl_comparison</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-10_parkinson_tabular_biomedical_dl_comparison</guid>
+    <description><![CDATA[ 早期パーキンソン検出は何で決まるのか、表データ比較研究が示した設計論 医療AIの精度差は、モデル名よりデータ設計と評価設計で広がる。 結論（先に要点） 早期パーキンソン病検出を表形式生体データで比較した研究は、Attentionを含む複数深層学習モデルの性能差を同条件で検証した。医療AI導入では、モデル選択より先にデータ前処理と評価指標の標準化が成果を左右する。 対象論文: Attention-Based Deep Learning for Early Parkinson’s Disease Detection with Tabular Biomedical Data 公開日: 2026-02... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
+  </item><item>
+    <title>2026-02-10_stabop_data_driven_rom_stabilization</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-10_stabop_data_driven_rom_stabilization</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-10_stabop_data_driven_rom_stabilization</guid>
+    <description><![CDATA[ CFD軽量化はどこまで実用か、StabOpが示したROM安定化の実力 低次元モデルを速く回すだけでなく、壊れにくくする設計が核心になった。 結論（先に要点） StabOpは、ROM（Reduced Order Modeling）にデータ駆動の安定化演算子を加えることで、高Re条件でも時空間統計の再現性を改善する方向を示した。CFDの高速化は「次元削減」だけでなく「安定化」の設計が必須であることを明確にした。 対象論文: StabOp: A Data-Driven Stabilization Operator for Reduced Order Modeling 公開日: 2026-02-08 ... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
+  </item><item>
+    <title>2026-02-11_enzymatic_degradation_semicrystalline_polymers</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_enzymatic_degradation_semicrystalline_polymers</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_enzymatic_degradation_semicrystalline_polymers</guid>
+    <description><![CDATA[ 生分解材料の速度設計は可能か、半結晶ポリマー分解理論の実装価値 分解性能は素材選定の後工程ではなく、設計初期で決めるべき指標になった。 結論（先に要点） 半結晶ポリマー粒子の酵素分解を理論化した研究は、分解速度の律速要因を構造側から整理する枠組みを示した。生分解材料開発では、実験依存の後追い最適化から、理論支援付きの前倒し設計へ移る可能性がある。 対象論文: Theory for enzymatic degradation of semi-crystalline polymer particles 公開日: 2026-02-11 URL: arxiv.org/abs/2602.10087 先に... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
+  </item><item>
+    <title>2026-02-11_macrodata_tabular_outlier_detection_benchmark</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_macrodata_tabular_outlier_detection_benchmark</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_macrodata_tabular_outlier_detection_benchmark</guid>
+    <description><![CDATA[ 外れ値検知の比較はなぜぶれるのか、MacrODataが示したベンチ規模の壁 57件で決める時代から、2446件で検証する時代へ。 結論（先に要点） MacrODataは、表形式外れ値検知の評価基盤を2,446データセット規模へ拡張し、既存小規模ベンチの統計的不安定性を緩和する方向を示した。手法の優劣を議論する前に、評価母数を十分に確保することが必須である。 対象論文: MacrOData: New Benchmarks of Thousands of Datasets for Tabular Outlier Detection 公開日: 2026-02-10 URL: arxiv.org/ab... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
+  </item><item>
+    <title>2026-02-11_pinn_drug_release_modeling</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_pinn_drug_release_modeling</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_pinn_drug_release_modeling</guid>
+    <description><![CDATA[ 薬物放出予測は少データで成立するか、PINN適用が示す実務的な境界 予測精度を上げる鍵はデータ量だけでなく、物理法則を学習へ埋め込むこと。 結論（先に要点） 薬物放出モデリングへPINNを適用した研究は、物理制約とデータ適合を同時学習することで、少データ条件でも妥当な予測を狙えることを示した。製剤開発では、実験回数を増やす前にモデル側の物理整合性を設計する価値が高い。 対象論文: Drug Release Modeling using Physics-Informed Neural Networks 公開日: 2026-02-11 URL: arxiv.org/abs/2602.09963 先... ]]></description>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
+  </item><item>
+    <title>2026-02-11_stall_cells_airfoil_vorticity_dynamics</title>
+    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_stall_cells_airfoil_vorticity_dynamics</link>
+    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_stall_cells_airfoil_vorticity_dynamics</guid>
+    <description><![CDATA[ 失速セルはどこから生まれるのか、翼面流れの3次元組織化を追った解析 失速の本質は局所乱れではなく、スパン方向へ広がる構造形成にある。 結論（先に要点） NACA0012翼の失速条件を解析した研究は、stall cells形成に2次元乱流構造が先行し、その後3次元組織化へ移る流れを示した。失速対策は平均揚力ではなく、渦構造の空間組織化を制御する視点が必要である。 対象論文: Stall cells over an airfoil. ]]></description>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
+  </item><item>
     <title>2026-02-11_univtac_visuotactile_robotics_benchmark</title>
     <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_univtac_visuotactile_robotics_benchmark</link>
     <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-11_univtac_visuotactile_robotics_benchmark</guid>
     <description><![CDATA[ 触覚ロボット学習は標準化できるか、UniVTACが示した統合基盤の突破口 研究が進まない理由はモデル性能より、比較基盤の不統一だった。 結論（先に要点） UniVTACは、視触覚マニピュレーションのデータ生成・学習・評価を統合した大規模シミュレーション基盤を提示した。触覚ロボット研究の再現性不足を改善し、実機導入前の比較検証サイクルを短縮できる可能性が高い。 対象論文: UniVTAC: A Unified Simulation Platform for Visuo-Tactile Manipulation Data Generation, Learning, and Benchmarking... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
-  </item><item>
-    <title>2026-02-12_agentdiff_enterprise_api_benchmark</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_agentdiff_enterprise_api_benchmark</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_agentdiff_enterprise_api_benchmark</guid>
-    <description><![CDATA[ API自動化の評価を出力結果から状態整合へ、Agent-Diffが示す実運用テストの再設計 成功レスポンスでも壊れるシステムを見抜く評価軸 返り値が正しくても、業務状態が壊れていれば失敗である。 結論（先に要点） Agent-Diffは、Enterprise APIタスクにおけるLLMエージェント評価で、最終応答中心の判定からState-Diff（状態差分）中心の判定へ軸を移した。コード実行を通じてAPI操作を再現し、結果の見た目ではなく内部状態の整合で評価することで、業務自動化に特有の潜在障害を検出しやすくする。APIエージェントの品質保証は、自然言語評価だけでは不十分である。 対象論文: ... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
-  </item><item>
-    <title>2026-02-12_agentnoisebench_tool_agent_robustness</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_agentnoisebench_tool_agent_robustness</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_agentnoisebench_tool_agent_robustness</guid>
-    <description><![CDATA[ ノイズでどこまで崩れるか、AgentNoiseBenchが示すツール利用エージェントの実力差 高精度評価の外側にある運用障害を先に測る 壊れる入力を知らずに導入すると、壊れる頻度だけが本番で分かる。 結論（先に要点） AgentNoiseBenchは、Tool-Using LLM Agentsの頑健性をノイズ条件下で比較するための評価基盤を提案した。理想条件での性能が高くても、軽微な入力揺らぎで手順が破綻するなら実運用リスクは高い。ノイズ耐性の定量化を標準試験に含めることが、エージェント品質保証の最低ラインになりつつある。 対象論文: AgentNoiseBench: Benchmarking... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
-  </item><item>
-    <title>2026-02-12_cav_lane_change_collaborative_safety_shield</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_cav_lane_change_collaborative_safety_shield</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_cav_lane_change_collaborative_safety_shield</guid>
-    <description><![CDATA[ 合流は自動運転の鬼門、協調セーフティシールドで境界ケースを先に潰す 走れることより、危険局面で破綻しないことが実装の条件になる。 結論（先に要点） A Collaborative Safety Shield for CAV lane changesは、混雑オンランプ合流において、安全制約を上位レイヤで適用する協調型保護機構を提案した。通常の方策最適化だけでは取りこぼしやすい境界ケースに対し、危険行動を抑制しつつ交通効率を維持する狙いである。自動運転の実運用では、性能改善より先に安全破綻モードを塞ぐ設計が必要だと示す。 対象論文: A Collaborative Safety Shield fo... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
-  </item><item>
-    <title>2026-02-12_dayahead_power_market_security</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_dayahead_power_market_security</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_dayahead_power_market_security</guid>
-    <description><![CDATA[ 電力市場モデルは効率だけで評価できるか、day-aheadベンチが示すセキュリティ含意 最適化と安全性を同時に見ない市場設計の限界 コスト最小化の勝者が、運用安全の勝者とは限らない。 結論（先に要点） 本研究は、電力システムのday-ahead market modelをベンチマークしながら、セキュリティ含意を同時に検討する視点を提示した。経済効率中心の比較では見落とされがちな脆弱性や運用リスクを、評価段階で可視化する重要性を示している。市場設計の意思決定は、価格性能と安全性を同時最適化する方向に進むべきである。 対象論文: A day-ahead market model for power... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
-  </item><item>
-    <title>2026-02-12_ddl2propbank_agent_devex_benchmark</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_ddl2propbank_agent_devex_benchmark</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_ddl2propbank_agent_devex_benchmark</guid>
-    <description><![CDATA[ 精度だけでは選べない、DDL2PropBank Agentが示すマルチエージェント開発体験の評価軸 実装できるかではなく、運用し続けられるかを測るベンチマークへ 成功率が同じでも、保守コストは同じではない。 結論（先に要点） DDL2PropBank Agentは、マルチエージェント基盤の比較に「Developer Experience（開発体験）」を明示的に持ち込んだ。Relational Schema Mappingという具体タスクに固定することで、単なる最終精度では見えない実装難易度、失敗再現性、修正容易性を比較しやすくしている。エージェント導入は性能順位だけで決めず、運用摩擦まで含めて... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
-  </item><item>
-    <title>2026-02-12_gas_phase_iodine_electronic_strong_coupling</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_gas_phase_iodine_electronic_strong_coupling</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_gas_phase_iodine_electronic_strong_coupling</guid>
-    <description><![CDATA[ 気相で強結合を観る価値、ヨウ素分子研究が開く光化学の再現性向上 溶媒要因を外せると、反応制御の本当に効く変数が見えてくる。 結論（先に要点） Electronic Strong Coupling of Gas-Phase Molecular Iodineは、気相環境で分子と光場の電子強結合を扱う方向性を示した。溶液系で混ざりがちな要因を分離しやすく、反応経路制御の設計則を明確化するうえで重要である。化学・材料開発では、経験則中心の条件探索から物理機構中心の条件設計へ移れる可能性がある。 対象論文: Electronic Strong Coupling of Gas-Phase Molecula... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
-  </item><item>
-    <title>2026-02-12_lingxidiagbench_psychiatric_llm_benchmark</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_lingxidiagbench_psychiatric_llm_benchmark</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_lingxidiagbench_psychiatric_llm_benchmark</guid>
-    <description><![CDATA[ 精神科AIは正答率だけで測れない、LingxiDiagBenchが示す診断評価の再設計 返答が自然でも安全とは限らない。診断過程そのものを監査する時代に入った。 結論（先に要点） LingxiDiagBenchは、中国語の精神科相談を題材に、LLMの診断性能を多エージェント構成で評価する枠組みを提示した。重要なのは「答えが合っているか」だけでなく、「どう推論したか」「危険な省略をしていないか」を評価対象に含めた点である。医療対話AIの運用前検証は、単発QA指標からプロセス監査型へ移る必要がある。 対象論文: LingxiDiagBench: A Multi-Agent Framework fo... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
-  </item><item>
-    <title>2026-02-12_oblique_wave_streak_reinforcement_flow_control</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_oblique_wave_streak_reinforcement_flow_control</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_oblique_wave_streak_reinforcement_flow_control</guid>
-    <description><![CDATA[ 乱流遷移の前兆をどう押さえるか、斜行波からストリーク増幅までを一本化した解析 先に支配帯域を絞れれば、CFDの探索コストは大きく下がる。 結論（先に要点） 本研究は、斜行波強制からストリーク増幅までを摂動ベースの周波数応答でつなぐ枠組みを示した。流れが不安定化する経路を周波数領域で整理できるため、制御入力や設計変更の優先順位を早期に決めやすくなる。流体開発では「全部試す」から「効く帯域に集中する」へ移行する実務価値がある。 対象論文: From oblique-wave forcing to streak reinforcement: A perturbation-based frequenc... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
-  </item><item>
-    <title>2026-02-12_plasma_ptau217_apoe_preclinical_decline</title>
-    <link>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_plasma_ptau217_apoe_preclinical_decline</link>
-    <guid>https://akiexp17.github.io/st-channel/articles/2026/2026-02-12_plasma_ptau217_apoe_preclinical_decline</guid>
-    <description><![CDATA[ 症状前アルツハイマー予測の現実解、p-tau217とAPOE統合評価の実装ポイント 介入が遅い問題は、診断技術より選定タイミングの問題でもある。 結論（先に要点） 本研究は、血漿p-tau217とAPOE遺伝型の組み合わせが、アルツハイマー病の前臨床認知低下予測で有用かを検討した。重要なのは、侵襲性の高い検査に依存せず、日常診療に近い情報でリスク層別化を進める方向を示した点である。予防介入や試験デザインの入口基準を更新する可能性がある。 対象論文: Predictive Value of Plasma P-tau217 and APOE Genotype for Preclinical Cog... ]]></description>
-    <pubDate>Sun, 15 Feb 2026 01:17:46 GMT</pubDate>
+    <pubDate>Sun, 15 Feb 2026 01:24:57 GMT</pubDate>
   </item>
     </channel>
   </rss>
