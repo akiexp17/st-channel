@@ -1,0 +1,9 @@
+Primary request: Keep the same air-conditioner heat-pump explainer shot and framing, but increase the camera energy and transitions.
+Scene/background: Keep the same blue-hour exterior and warm interior connection.
+Subject: Keep the same single split-system AC and refrigerant-loop cutaway.
+Action: Keep the same 4-stage logic and timing (evaporation -> compression -> condensation -> expansion).
+Camera: Change only camera motion to be more dynamic: speed-ramped dolly zoom into outdoor coil, tighter 180-degree micro-orbit around compressor, faster whip-zoom to indoor vents, then macro pull-through at expansion valve.
+Lighting/mood: Keep the same cool-blue vs warm-amber contrast.
+Text (verbatim): "吸熱", "圧縮", "放熱", "膨張"
+Constraints: Same shot structure, same stage order, same subject, same text; change only camera dynamism.
+Avoid: jitter, flicker, unreadable labels, chaotic motion.

@@ -1,0 +1,14 @@
+Use case: social explainer reel (science/tech)
+Primary request: Explain how an air conditioner heat pump works in winter by visualizing heat transfer from outdoor air to indoor room air.
+Scene/background: Blue-hour urban apartment exterior and warm modern living room interior, connected by visible copper refrigerant lines.
+Subject: One realistic split air conditioner system (outdoor condenser unit + indoor wall unit) with refrigerant flow and compressor core visible in a cinematic cutaway style.
+Action: Beat 1 (0-2s) zoom into the outdoor unit as blue energy particles are absorbed from cold air (evaporation). Beat 2 (2-4s) rapid push-in to compressor cross-section with dynamic pressure rise and temperature climb (compression). Beat 3 (4-6s) whip-pan to indoor unit where orange heat waves are released into the room (condensation). Beat 4 (6-8s) macro transition through expansion valve as refrigerant pressure drops and flow loops back outside (expansion).
+Camera: Start with a dramatic wide shot, then controlled zoom-in, macro inserts, and one energetic orbit around the compressor core; smooth motion, no shaky cam.
+Lighting/mood: High-contrast cinematic lighting, cool blue outdoors and warm amber indoors, confident high-tech mood.
+Color palette: deep navy, electric cyan, steel gray, warm amber, soft orange.
+Style/format: Photorealistic CGI with physically plausible fluid/thermal effects, premium science documentary look, 24fps motion blur.
+Timing/beats: 4 clear beats over 8 seconds, each stage visually distinct and readable.
+Audio: Deep cinematic whoosh transitions, subtle mechanical compressor hum, no music lyrics.
+Text (verbatim): "吸熱", "圧縮", "放熱", "膨張"
+Constraints: Keep the same single air conditioner system throughout; preserve engineering plausibility; no people; suitable for all ages.
+Avoid: cartoon look; illegible text; jitter; flicker; extra units appearing; chaotic particle noise.

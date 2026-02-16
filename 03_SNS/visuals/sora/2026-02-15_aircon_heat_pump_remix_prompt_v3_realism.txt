@@ -1,0 +1,10 @@
+Primary request: Keep the same shot, framing, and camera choreography as v2, but increase photorealism and material fidelity.
+Scene/background: Keep the same environment and composition.
+Subject: Keep the same single split-system AC and refrigerant-loop cutaway.
+Action: Keep the same 4-stage heat-pump sequence and timing.
+Camera: Keep exactly the same camera motion as the previous remix.
+Style/format: Change only rendering realism: brushed aluminum and painted steel micro-texture, copper reflections, micro-condensation on cold surfaces, subtle heat shimmer near warm coils, physically plausible refrigerant density behavior.
+Lighting/mood: Keep the same cinematic contrast and mood.
+Text (verbatim): "吸熱", "圧縮", "放熱", "膨張"
+Constraints: Same shot, same framing, same camera, same timing, same text; change only material realism and physical detail.
+Avoid: plastic-looking surfaces, cartoon shading, flicker, unreadable labels.

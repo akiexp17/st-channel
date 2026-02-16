@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エアコンは熱を作っていない</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #080E1A;
+            --bg-mid: #0F172A;
+            --bg-surface: #1E293B;
+            --text-primary: #F1F5F9;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --cold: #38BDF8;
+            --cold-dim: rgba(56, 189, 248, 0.12);
+            --hot: #FB7185;
+            --hot-dim: rgba(251, 113, 133, 0.12);
+            --accent: #A78BFA;
+            --glass: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glow-cold: rgba(56, 189, 248, 0.25);
+            --glow-hot: rgba(251, 113, 133, 0.25);
+        }
+
+        body {
+            width: 1080px;
+            height: 1920px;
+            overflow: hidden;
+            background: var(--bg-deep);
+            font-family: 'Noto Sans JP', -apple-system, sans-serif;
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ambient glow */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -200px;
+            left: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--glow-cold) 0%, transparent 70%);
+            opacity: 0.35;
+            filter: blur(80px);
+            animation: drift 12s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--glow-hot) 0%, transparent 70%);
+            opacity: 0.25;
+            filter: blur(80px);
+            animation: drift 12s ease-in-out infinite alternate-reverse;
+            z-index: 0;
+        }
+
+        /* ===== SCENE ===== */
+        .scene {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+            /* 全シーン共通: 上下に余白を確保 */
+            padding: 120px 70px 160px;
+        }
+
+        .scene.active {
+            opacity: 1;
+        }
+
+        /* Glass card */
+        .glass {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .glass.cold-glow {
+            box-shadow: 0 0 30px var(--cold-dim), inset 0 1px 0 rgba(56, 189, 248, 0.08);
+            border-color: rgba(56, 189, 248, 0.12);
+        }
+
+        .glass.hot-glow {
+            box-shadow: 0 0 30px var(--hot-dim), inset 0 1px 0 rgba(251, 113, 133, 0.08);
+            border-color: rgba(251, 113, 133, 0.12);
+        }
+
+        /* ===== SCENE 1: HOOK ===== */
+        #scene1 {
+            gap: 24px;
+        }
+
+        .hook-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 100px;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: var(--cold);
+            background: var(--cold-dim);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            opacity: 0;
+        }
+
+        .hook-icon-row {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 80px;
+            margin: 24px 0 16px;
+            opacity: 0;
+        }
+
+        .hook-icon-row .arrow {
+            font-size: 48px;
+            color: var(--text-muted);
+        }
+
+        .hook-main {
+            font-size: 68px;
+            font-weight: 900;
+            text-align: center;
+            line-height: 1.35;
+            letter-spacing: -0.02em;
+            opacity: 0;
+        }
+
+        .hook-main .highlight {
+            background: linear-gradient(135deg, var(--cold), var(--hot));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hook-sub {
+            font-size: 36px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            opacity: 0;
+            letter-spacing: 0.05em;
+        }
+
+        .hook-line {
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--cold), var(--hot));
+            border-radius: 2px;
+            opacity: 0;
+            margin-top: 8px;
+        }
+
+        /* ===== SCENE 2: CYCLE ===== */
+        #scene2 {
+            gap: 0;
+            justify-content: center;
+        }
+
+        .s2-header {
+            text-align: center;
+            margin-bottom: 36px;
+            opacity: 0;
+        }
+
+        .s2-header h2 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .s2-header p {
+            font-size: 24px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-weight: 300;
+        }
+
+        .cycle-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .cycle-card {
+            padding: 28px 24px;
+            opacity: 0;
+            transform: translateY(24px);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .cycle-card .card-icon {
+            font-size: 36px;
+        }
+
+        .cycle-card .card-num {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+
+        .cycle-card.cold .card-num {
+            color: var(--cold);
+        }
+
+        .cycle-card.hot .card-num {
+            color: var(--hot);
+        }
+
+        .cycle-card .card-title {
+            font-size: 34px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .cycle-card .card-desc {
+            font-size: 20px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
+        .elec-callout {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 32px;
+            border-radius: 100px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #FCD34D;
+            background: rgba(252, 211, 77, 0.08);
+            border: 1px solid rgba(252, 211, 77, 0.15);
+            margin-top: 32px;
+            opacity: 0;
+        }
+
+        /* ===== SCENE 3: COP ===== */
+        #scene3 {
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .s3-header {
+            text-align: center;
+            opacity: 0;
+        }
+
+        .s3-header h2 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .s3-header p {
+            font-size: 22px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+            font-weight: 300;
+        }
+
+        .compare-block {
+            width: 100%;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .compare-label {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .compare-label .label-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .compare-label .label-icon.gray {
+            background: rgba(100, 116, 139, 0.2);
+        }
+
+        .compare-label .label-icon.blue {
+            background: var(--cold-dim);
+        }
+
+        .bar-track {
+            width: 100%;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--glass-border);
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 22px;
+            font-weight: 700;
+            width: 0%;
+            transition: width 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .bar-fill.gray {
+            background: linear-gradient(90deg, #475569, #334155);
+        }
+
+        .bar-fill.blue {
+            background: linear-gradient(90deg, #0EA5E9, #38BDF8);
+        }
+
+        .bar-fill.red {
+            position: absolute;
+            top: 0;
+            background: linear-gradient(90deg, #F43F5E, #FB7185);
+            transition: width 1.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
+        }
+
+        .bar-result {
+            font-size: 44px;
+            font-weight: 900;
+            margin-top: 10px;
+            letter-spacing: -0.02em;
+        }
+
+        .bar-result.muted {
+            color: var(--text-muted);
+        }
+
+        .bar-result.pop {
+            color: var(--cold);
+        }
+
+        .free-tag {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 5px 14px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #FCD34D;
+            background: rgba(252, 211, 77, 0.15);
+            opacity: 0;
+        }
+
+        .big-stat {
+            text-align: center;
+            opacity: 0;
+        }
+
+        .big-stat .stat-label {
+            font-size: 22px;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .big-stat .stat-value {
+            font-size: 110px;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, var(--cold), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+        }
+
+        .big-stat .stat-unit {
+            font-size: 48px;
+            font-weight: 300;
+            color: var(--text-secondary);
+        }
+
+        /* ===== SCENE 4: REVEAL ===== */
+        #scene4 {
+            gap: 40px;
+        }
+
+        .reveal-line {
+            font-size: 46px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .reveal-line .em {
+            font-weight: 900;
+            font-size: 52px;
+        }
+
+        .reveal-big {
+            font-size: 64px;
+            font-weight: 900;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.7);
+        }
+
+        .reveal-big .gradient {
+            background: linear-gradient(135deg, var(--cold), var(--hot));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .reveal-check {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-size: 26px;
+            font-weight: 700;
+            color: #34D399;
+            background: rgba(52, 211, 153, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            opacity: 0;
+        }
+
+        /* ===== SCENE 5: CTA ===== */
+        #scene5 {
+            gap: 28px;
+        }
+
+        .cta-icon {
+            font-size: 120px;
+            opacity: 0;
+            filter: drop-shadow(0 0 30px rgba(56, 189, 248, 0.3));
+        }
+
+        .cta-text {
+            font-size: 56px;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            opacity: 0;
+        }
+
+        .cta-divider {
+            width: 60px;
+            height: 3px;
+            background: var(--text-muted);
+            border-radius: 2px;
+            opacity: 0;
+        }
+
+        .cta-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            opacity: 0;
+        }
+
+        .cta-brand .brand-name {
+            font-size: 28px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            letter-spacing: 0.15em;
+        }
+
+        .cta-brand .brand-handle {
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--cold);
+        }
+
+        /* ===== KEYFRAMES ===== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+
+            50% {
+                transform: scale(1.06);
+            }
+
+            70% {
+                transform: scale(0.96);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes drift {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(80px, 60px);
+            }
+        }
+
+        @keyframes expandW {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+
+            to {
+                width: 80px;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SCENE 1: HOOK (0-5s) -->
+    <div id="scene1" class="scene active">
+        <div class="hook-badge" id="h-badge">SCIENCE × DAILY LIFE</div>
+        <div class="hook-icon-row" id="h-icons">
+            <span>❄️</span><span class="arrow">→</span><span>🔥</span>
+        </div>
+        <div class="hook-main" id="h-main">エアコンは<br>熱を<span class="highlight">"作っていない"</span></div>
+        <div class="hook-line" id="h-line"></div>
+        <div class="hook-sub" id="h-sub">知ってた？</div>
+    </div>
+
+    <!-- SCENE 2: CYCLE (5-15s) -->
+    <div id="scene2" class="scene">
+        <div class="s2-header" id="s2h">
+            <h2>冷媒サイクル</h2>
+            <p>4ステップで外気の熱を室内に運ぶ</p>
+        </div>
+        <div class="cycle-grid">
+            <div class="cycle-card glass cold-glow cold" id="cc1">
+                <div class="card-icon">💧</div>
+                <div class="card-num">STEP 01 — 吸熱</div>
+                <div class="card-title">蒸発</div>
+                <div class="card-desc">外気から熱を吸収<br>冷媒沸点 −40℃</div>
+            </div>
+            <div class="cycle-card glass hot-glow hot" id="cc2">
+                <div class="card-icon">⚡</div>
+                <div class="card-num">STEP 02 — 圧縮</div>
+                <div class="card-title">昇温</div>
+                <div class="card-desc">電力で圧縮<br>80〜100℃に上昇</div>
+            </div>
+            <div class="cycle-card glass hot-glow hot" id="cc3">
+                <div class="card-icon">🏠</div>
+                <div class="card-num">STEP 03 — 放熱</div>
+                <div class="card-title">暖房</div>
+                <div class="card-desc">室内に熱を放出<br>暖房の正体</div>
+            </div>
+            <div class="cycle-card glass cold-glow cold" id="cc4">
+                <div class="card-icon">❄️</div>
+                <div class="card-num">STEP 04 — 膨張</div>
+                <div class="card-title">冷却</div>
+                <div class="card-desc">急減圧で温度降下<br>①に戻る</div>
+            </div>
+        </div>
+        <div class="elec-callout" id="elec-c">⚡ 電力は STEP 02 の圧縮だけに使われる</div>
+    </div>
+
+    <!-- SCENE 3: COP COMPARISON (15-22s) -->
+    <div id="scene3" class="scene">
+        <div class="s3-header" id="s3h">
+            <h2>なぜ効率が100%を超えるのか</h2>
+            <p>入力エネルギー vs 出力エネルギー</p>
+        </div>
+        <div class="compare-block" id="cb1">
+            <div class="compare-label">
+                <span class="label-icon gray">🔌</span> 電気ヒーター
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill gray" id="bar-h">1kW</div>
+            </div>
+            <div class="bar-result muted">→ 1 kW の熱</div>
+        </div>
+        <div class="compare-block" id="cb2">
+            <div class="compare-label">
+                <span class="label-icon blue">❄️</span> エアコン（ヒートポンプ）
+            </div>
+            <div class="bar-track">
+                <div class="bar-fill blue" id="bar-a">1kW</div>
+                <div class="bar-fill red" id="bar-f">
+                    <span class="free-tag" id="ftag">外気の熱 — タダ!</span>
+                </div>
+            </div>
+            <div class="bar-result pop">→ 3〜6 kW の熱</div>
+        </div>
+        <div class="big-stat" id="bstat">
+            <div class="stat-label">最大効率</div>
+            <div><span class="stat-value">600</span><span class="stat-unit">%</span></div>
+        </div>
+    </div>
+
+    <!-- SCENE 4: REVEAL (22-28s) -->
+    <div id="scene4" class="scene">
+        <div class="reveal-line" id="r1">外気の熱エネルギーを<br><span class="em">"タダで"</span>もらっている</div>
+        <div class="reveal-big" id="r2"><span class="gradient">だから COP 3〜6</span></div>
+        <div class="reveal-check" id="r3">✅ エネルギー保存則に違反していない</div>
+    </div>
+
+    <!-- SCENE 5: CTA (28-30s) -->
+    <div id="scene5" class="scene">
+        <div class="cta-icon" id="ct-i">🧵</div>
+        <div class="cta-text" id="ct-t">続きはスレッドで</div>
+        <div class="cta-divider" id="ct-d"></div>
+        <div class="cta-brand" id="ct-b">
+            <span class="brand-name">ST CHANNEL</span>
+            <span class="brand-handle">@st_channel_sci</span>
+        </div>
+    </div>
+
+    <script>
+        function anim(id, name, delay = 0) {
+            setTimeout(() => {
+                const el = document.getElementById(id);
+                if (el) el.style.animation = `${name} forwards`;
+            }, delay);
+        }
+
+        function showScene(n) {
+            document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+            document.getElementById('scene' + n).classList.add('active');
+        }
+
+        // ── Scene 1: Hook (0-5s)
+        anim('h-badge', 'fadeIn 0.6s ease', 300);
+        anim('h-icons', 'scaleIn 0.7s ease', 700);
+        anim('h-main', 'fadeUp 1s ease', 1200);
+        anim('h-line', 'expandW 0.6s ease', 2200);
+        anim('h-sub', 'fadeIn 0.8s ease', 2800);
+
+        // ── Scene 2: Cycle (5-15s)
+        setTimeout(() => {
+            showScene(2);
+            anim('s2h', 'fadeUp 0.8s ease', 300);
+            anim('cc1', 'fadeUp 0.7s ease', 800);
+            anim('cc2', 'fadeUp 0.7s ease', 1500);
+            anim('cc3', 'fadeUp 0.7s ease', 2200);
+            anim('cc4', 'fadeUp 0.7s ease', 2900);
+            anim('elec-c', 'fadeUp 0.8s ease', 4500);
+        }, 5000);
+
+        // ── Scene 3: COP (15-22s)
+        setTimeout(() => {
+            showScene(3);
+            anim('s3h', 'fadeUp 0.8s ease', 300);
+            anim('cb1', 'slideLeft 0.8s ease', 800);
+            setTimeout(() => { document.getElementById('bar-h').style.width = '16.6%'; }, 1200);
+            anim('cb2', 'slideLeft 0.8s ease', 2000);
+            setTimeout(() => {
+                document.getElementById('bar-a').style.width = '16.6%';
+                document.getElementById('bar-f').style.width = '83.4%';
+                document.getElementById('bar-f').style.left = '16.6%';
+            }, 2400);
+            anim('ftag', 'fadeIn 0.5s ease', 4000);
+            anim('bstat', 'bounceIn 0.8s ease', 5000);
+        }, 15000);
+
+        // ── Scene 4: Reveal (22-28s)
+        setTimeout(() => {
+            showScene(4);
+            anim('r1', 'fadeUp 1s ease', 400);
+            anim('r2', 'bounceIn 0.9s ease', 2200);
+            anim('r3', 'fadeUp 0.8s ease', 4000);
+        }, 22000);
+
+        // ── Scene 5: CTA (28-30s)
+        setTimeout(() => {
+            showScene(5);
+            anim('ct-i', 'bounceIn 0.6s ease', 200);
+            anim('ct-t', 'fadeUp 0.6s ease', 600);
+            anim('ct-d', 'fadeIn 0.4s ease', 1000);
+            anim('ct-b', 'fadeIn 0.6s ease', 1200);
+        }, 28000);
+    </script>
+</body>
+
+</html>
