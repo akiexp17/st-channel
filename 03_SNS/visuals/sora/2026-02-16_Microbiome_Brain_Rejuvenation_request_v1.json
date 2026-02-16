@@ -1,0 +1,11 @@
+{
+    "dry_run": true,
+    "request": {
+        "endpoint": "/v1/videos",
+        "input_reference": "/Users/akitomo/src/vault/10_Projects/ST_channnel/03_SNS/visuals/2026-02-16_Microbiome_Brain_Rejuvenation.png",
+        "model": "sora-2-pro",
+        "prompt": "Use case: social explainer reel (science/tech)\nPrimary request: Visualizing the biological mechanism of microbiome-induced brain rejuvenation in mice.\nScene/background: Split screen effect. Top half: Dark, inflamed biological environment (age). Bottom half: Bright, clean, regenerative biological environment (rejuvenation).\nSubject: Abstract representation of the Gut-Brain Axis. Top: 'Aged Microbiome' releasing red particle signals (Eotaxin-1) that travel up to a gray, static Brain model, reducing neural activity. Bottom: 'Reset Microbiome' (clear/blue) with no red signals, leading to a glowing blue Brain model with active sparking neural connections (neurogenesis).\nAction: Beat 1 (0-2s) Focus on the top 'Aged' section; red particles swarm from gut to brain. Beat 2 (2-4s) Transition to bottom 'Rejuvenated' section; a wave of blue energy clears the red particles. Beat 3 (4-6s) Zoom into the bottom Brain; neural sparks ignite and multiply (neurogenesis). Beat 4 (6-8s) Pull back to show the contrast between the dull top brain and the glowing bottom brain.\nCamera: Split-screen composition that merges into a single focus on the bottom half. Smooth, cinematic motion.\nLighting/mood: Top: Shadowy, red/orange warning glow. Bottom: Bioluminescent blue/cyan, clean, hopeful, high-tech medical style.\nColor palette: Deep navy background. Bad signals: Red (#EF4444). Good signals: Cyan (#6EE7B7), Electric Blue.\nStyle/format: 3D medical animation, high-end documentary quality, photorealistic textures with glowing particle effects.\nTiming/beats: 0-4s: The problem (Aging/Inflammation). 4-8s: The solution (Rejuvenation/Neurogenesis).\nAudio: Low, ominous drone for top section transforming into an uplifting, ethereal chime for the bottom section.\nText (verbatim): \"Aging\", \"Inflammation\", \"Reset\", \"Neurogenesis\"\nConstraints: 9:16 vertical ratio; clear visual distinction between 'old/bad' and 'new/good'; scientifically inspired but visually abstract for clarity.",
+        "seconds": "8",
+        "size": "720x1280"
+    }
+}
