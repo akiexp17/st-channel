@@ -66,17 +66,23 @@ varying vec2 vUv;
 uniform sampler2D uTarget;
 uniform vec3 inflowColor;
 uniform vec2 inflowVelocity;
-uniform float isVelocity; // 1.0 if writing to velocity texture, 0.0 if dye
+uniform float isVelocity; 
 
 void main () {
     vec3 base = texture2D(uTarget, vUv).xyz;
     
-    // Create an invisible wind inflow on the left side
-    float mask = step(vUv.x, 0.05); // Left edge
+    // Inflow on the left side
+    float mask = step(vUv.x, 0.05); // Left edge 5% width
     
-    // Only apply wind velocity, do not inject color (so no 'blue wall' appears)
-    vec3 newVal = mix(base, isVelocity > 0.5 ? vec3(inflowVelocity, 0.0) : base, mask * 0.2);
-    gl_FragColor = vec4(newVal, 1.0);
+    if (isVelocity > 0.5) {
+        vec3 newVal = mix(base, vec3(inflowVelocity, 0.0), mask * 0.5);
+        gl_FragColor = vec4(newVal, 1.0);
+    } else {
+        // Inject color
+        float yMask = step(abs(vUv.y - 0.5), 0.25); // central strip
+        vec3 newVal = mix(base, inflowColor, mask * yMask * 0.5);
+        gl_FragColor = vec4(newVal, 1.0);
+    }
 }
 `;
 
@@ -88,7 +94,6 @@ varying vec2 vUv;
 uniform sampler2D uVelocity;
 uniform sampler2D uSource;
 uniform vec2 texelSize;
-uniform vec2 dyeTexelSize;
 uniform float dt;
 uniform float dissipation;
 
@@ -114,7 +119,6 @@ uniform float obstacleRadius;
 uniform float aspectRatio;
 
 void main () {
-    // Check obstacle
     vec2 p = vUv - obstacleCenter;
     p.x *= aspectRatio;
     if (length(p) < obstacleRadius) {
@@ -122,15 +126,16 @@ void main () {
         return;
     }
 
+    vec2 C = texture2D(uVelocity, vUv).xy;
     float L = texture2D(uVelocity, vL).x;
     float R = texture2D(uVelocity, vR).x;
     float T = texture2D(uVelocity, vT).y;
     float B = texture2D(uVelocity, vB).y;
 
-    if (vL.x < 0.0) L = -texture2D(uVelocity, vR).x;
-    if (vR.x > 1.0) R = -texture2D(uVelocity, vL).x;
-    if (vT.y > 1.0) T = -texture2D(uVelocity, vB).y;
-    if (vB.y < 0.0) B = -texture2D(uVelocity, vT).y;
+    if (vL.x < 0.0) L = C.x; 
+    if (vR.x > 1.0) R = C.x; 
+    if (vT.y > 1.0) T = 0.0;
+    if (vB.y < 0.0) B = 0.0;
 
     float div = 0.5 * (R - L + T - B);
     gl_FragColor = vec4(div, 0.0, 0.0, 1.0);
@@ -155,22 +160,23 @@ void main () {
     vec2 p = vUv - obstacleCenter;
     p.x *= aspectRatio;
     if (length(p) < obstacleRadius) {
-        gl_FragColor = vec4(0.0);
+        gl_FragColor = texture2D(uPressure, vUv);
         return;
     }
 
+    float C = texture2D(uPressure, vUv).x;
     float L = texture2D(uPressure, vL).x;
     float R = texture2D(uPressure, vR).x;
     float T = texture2D(uPressure, vT).x;
     float B = texture2D(uPressure, vB).x;
-    float C = texture2D(uDivergence, vUv).x;
+    float D = texture2D(uDivergence, vUv).x;
     
-    if (vL.x < 0.0) L = texture2D(uPressure, vR).x;
-    if (vR.x > 1.0) R = texture2D(uPressure, vL).x;
-    if (vT.y > 1.0) T = texture2D(uPressure, vB).x;
-    if (vB.y < 0.0) B = texture2D(uPressure, vT).x;
+    if (vL.x < 0.0) L = C;
+    if (vR.x > 1.0) R = C;
+    if (vT.y > 1.0) T = C;
+    if (vB.y < 0.0) B = C;
 
-    float pressure = (L + R + B + T - C) * 0.25;
+    float pressure = (L + R + B + T - D) * 0.25;
     gl_FragColor = vec4(pressure, 0.0, 0.0, 1.0);
 }
 `;
@@ -197,13 +203,19 @@ void main () {
         return;
     }
 
+    float C = texture2D(uPressure, vUv).x;
     float L = texture2D(uPressure, vL).x;
     float R = texture2D(uPressure, vR).x;
     float T = texture2D(uPressure, vT).x;
     float B = texture2D(uPressure, vB).x;
 
+    if (vL.x < 0.0) L = C;
+    if (vR.x > 1.0) R = C;
+    if (vT.y > 1.0) T = C;
+    if (vB.y < 0.0) B = C;
+
     vec2 velocity = texture2D(uVelocity, vUv).xy;
-    velocity.xy -= vec2(R - L, T - B);
+    velocity.xy -= vec2(R - L, T - B) * 0.5;
     gl_FragColor = vec4(velocity, 0.0, 1.0);
 }
 `;

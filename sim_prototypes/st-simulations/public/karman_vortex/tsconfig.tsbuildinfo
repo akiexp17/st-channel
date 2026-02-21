@@ -1,1 +1,0 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/components/aitutor.tsx","./src/components/controls.tsx","./src/components/fluidcanvas.tsx","./src/fluid/webglfluid.ts","./src/fluid/shaders.ts"],"errors":true,"version":"5.7.3"}

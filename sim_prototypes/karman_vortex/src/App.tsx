@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { FluidCanvas, FluidCanvasHandle } from './components/FluidCanvas';
 import { Controls } from './components/Controls';
 import { AITutor } from './components/AITutor';

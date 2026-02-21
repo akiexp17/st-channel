@@ -224,7 +224,7 @@ export class WebGLFluid {
         this.density.swap();
     }
 
-    private applyConstantInflow(dt: number) {
+    private applyConstantInflow() {
         const gl = this.gl;
         this.bindProgram(this.constantInflowProgram);
 
@@ -252,7 +252,7 @@ export class WebGLFluid {
         const gl = this.gl;
         gl.disable(gl.BLEND);
 
-        this.applyConstantInflow(dt);
+        this.applyConstantInflow();
 
         // Advection
         this.bindProgram(this.advectionProgram);
