@@ -153,3 +153,16 @@ X投稿に添付する図解を設計し、**実際に画像を生成する**。
 - [ ] 数値に単位・前提条件があるか
 - [ ] NGワードを使っていないか
 - [ ] Brand Voice 7原則に違反していないか
+
+---
+
+## ST_Content_Hub 連携
+
+このスキルは `ST_Content_Hub` の以下のForgeとして統合されています：
+
+- **Post Forge** → Content Blast Step 3: 記事 + 画像をベースにX投稿文を生成
+- **Visual Forge** → Content Blast Step 2: EPの仕組みからインフォグラフィックを生成
+- **Campaign Forge** → Content Blast の週間戦略で利用
+
+**単独実行も可能**: 6つのForgeは従来通り個別トリガーで独立動作します。
+**Evidence Pack → Post の直結パス**: EPを直接Post Forgeに入力して投稿文を生成することも可能です。

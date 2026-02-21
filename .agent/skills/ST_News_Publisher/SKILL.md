@@ -94,3 +94,13 @@ git push origin main
 - [ ] 「へぇー」で終わらず、「なるほど！」と唸らせる技術解説があるか？
 - [ ] 冒頭で読者の心を掴んでいるか？
 - [ ] 最後に「考えさせる」問いかけがあるか？
+
+---
+
+## ST_Content_Hub 連携
+
+このスキルは `ST_Content_Hub` の **Article Forge** として統合されています。
+
+- **Content Blast から呼ばれた場合**: Evidence Pack をベースに、本スキルの脱AI10ポイントに従って記事を生成します。
+- **単独実行も可能**: 従来通り、RSSニュースからの記事作成ワークフローは独立して動作します。
+- **保存先**: Content Blast 時は `02_Articles/YYYY/YYYY-MM-DD_[slug].md` に保存。
