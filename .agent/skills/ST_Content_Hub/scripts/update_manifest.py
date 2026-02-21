@@ -26,6 +26,7 @@ def update_status(manifest_content: str, content_type: str, file_path: str) -> s
         "posts": "📱 X投稿文",
         "podcast": "🎙️ ポッドキャスト",
         "video": "🎬 動画",
+        "short_video": "📱 Short動画",
     }
 
     marker = type_markers.get(content_type)
@@ -59,6 +60,7 @@ def main():
     parser.add_argument("--posts", default=None, help="X投稿文ファイルパス")
     parser.add_argument("--podcast", default=None, help="ポッドキャストファイルパス")
     parser.add_argument("--video", default=None, help="動画ファイルパス")
+    parser.add_argument("--short-video", default=None, help="Short動画ファイルパス")
     args = parser.parse_args()
 
     if not os.path.exists(args.manifest):
@@ -77,6 +79,7 @@ def main():
         "posts": args.posts,
         "podcast": args.podcast,
         "video": args.video,
+        "short_video": args.short_video,
     }
 
     for content_type, file_path in updates.items():

@@ -2,7 +2,8 @@
 name: ST_Content_Hub
 description: >
   STチャンネルの統合コンテンツパイプライン。一つのトピックからDeep Research→記事→SNS投稿→画像→
-  ポッドキャスト→動画までを一括生成する「Content Blast」を実現するオーケストレーションスキル。
+  ポッドキャスト→動画→Short動画までを一括生成する「Content Blast」を実現するオーケストレーションスキル。
+  多言語対応（--language ja/en）、NotebookLMウォーターマーク自動除去にも対応。
   トリガー: 「深掘りして全部作って」「このテーマを調査して」「EPから全コンテンツ」
   「Content Blast」「全部作って」「一括生成」「統合パイプライン」
 ---
@@ -27,16 +28,16 @@ description: >
    └───┬───────────┘
        │
    ┌───▼───────────────────────────────────────────┐
-   │              Content Blast                     │
-   │  ┌────────┬────────┬────────┬────────┬───────┐ │
-   │  │Article │  Post  │ Visual │Podcast │ Video │ │
-   │  │ Forge  │ Forge  │ Forge  │ Forge  │ Forge │ │
-   │  └───┬────┴───┬────┴───┬────┴───┬────┴───┬───┘ │
-   └──────┼────────┼────────┼────────┼────────┼─────┘
-          │        │        │        │        │
-          ▼        ▼        ▼        ▼        ▼
-      02_Articles 03_SNS  03_SNS  04_Media 04_Media
-                  /posts  /visuals /podcasts /videos
+   │              Content Blast                      │
+   │  ┌────────┬────────┬────────┬────────┬───────┬────────┐  │
+   │  │Article │  Post  │ Visual │Podcast │ Video │ Short  │  │
+   │  │ Forge  │ Forge  │ Forge  │ Forge  │ Forge │ Video  │  │
+   │  └───┬────┴───┬────┴───┬────┴───┬────┴───┬───┴───┬────┘  │
+   └──────┼────────┼────────┼────────┼────────┼────────┼───────┘
+           │        │        │        │        │       │
+           ▼        ▼        ▼        ▼        ▼       ▼
+       02_Articles 03_SNS  03_SNS  04_Media 04_Media 04_Media
+                   /posts  /visuals /podcasts /videos /videos
 ```
 
 ## トリガーキーワード
@@ -93,7 +94,16 @@ description: >
 
 ## Mode 2: Content Blast
 
-> 1つのEvidence Packから5種類のコンテンツを順次生成する。
+> 1つのEvidence Packから6種類のコンテンツを順次生成する。多言語対応（`--lang ja/en`）。
+
+### オーケストレーションスクリプト
+
+```bash
+python3 .agent/skills/ST_Content_Hub/scripts/content_blast.py \
+  --ep "03_SNS/research/YYYY-MM-DD_EP_トピック.md" \
+  --slug "topic_slug" \
+  --lang ja  # 音声・動画の言語（デフォルト: ja）
+```
 
 ### 実行順序（依存関係を考慮）
 
@@ -106,9 +116,13 @@ Step 3: Post Forge (記事+画像をベースにSNS投稿文生成)
     ↓
 Step 4: Podcast Forge (NotebookLMにEPを投入→音声生成)
     ↓
-Step 5: Video Forge (NotebookLMで動画生成)
+Step 5: Video Forge (NotebookLMでExplainer動画生成)
     ↓
-Step 6: Manifest更新 (全生成物のリンクを記録)
+Step 6: Short Video Forge (NotebookLMでBrief動画生成)
+    ↓
+Step 7: Watermark除去 (NotebookLMロゴを自動除去)
+    ↓
+Step 8: Manifest更新 (全生成物のリンクを記録)
 ```
 
 ### Step 1: Article Forge — 深掘り記事
@@ -204,33 +218,78 @@ nlm source add <nb-id> --text "<EPの全文>" --title "[トピック名] Evidenc
 # 3. 記事もソースとして追加
 nlm source add <nb-id> --text "<記事の全文>" --title "[トピック名] 記事"
 
-# 4. ポッドキャスト生成
-nlm audio create <nb-id> --format deep_dive --length default --confirm
+# 4. ポッドキャスト生成（--language で言語指定）
+nlm audio create <nb-id> --format deep_dive --language ja --length default --confirm
 
 # 5. 生成完了を待つ
 nlm studio status <nb-id>
 
-# 6. ダウンロード
-nlm download audio <nb-id> --output 04_Media/podcasts/YYYY-MM-DD_[slug].mp3
+# 6. ダウンロード（日本語版は _ja サフィックス）
+nlm download audio <nb-id> --output 04_Media/podcasts/YYYY-MM-DD_[slug]_ja.mp3
 ```
 
-### Step 5: Video Forge — 動画
+**多言語オプション**: `--language` に BCP-47 コード（`en`, `ja`, `es`, `fr`, `de`）を指定。
+ファイル名には言語サフィックスを付与（例: `_ja.mp3`）。英語の場合はサフィックスなし。
+
+### Step 5: Video Forge — Explainer動画
 
 **使用ツール**: `nlm`（NotebookLM CLI）
 
 **手順**:
 ```bash
-# 同じノートブックから動画を生成
-nlm video create <nb-id> --format explainer --style auto_select --confirm
+# 同じノートブックからExplainer動画を生成
+nlm video create <nb-id> --format explainer --style auto_select --language ja --confirm
 
 # 生成完了を待つ
 nlm studio status <nb-id>
 
 # ダウンロード
-nlm download video <nb-id> --output 04_Media/videos/YYYY-MM-DD_[slug].mp4
+nlm download video <nb-id> --output 04_Media/videos/YYYY-MM-DD_[slug]_ja.mp4
 ```
 
-### Step 6: Manifest更新
+### Step 6: Short Video Forge — Short動画
+
+**使用ツール**: `nlm`（NotebookLM CLI）
+
+> TikTok/YouTube Shorts/Instagram Reels 向けの1分以内のショート動画を生成する。
+
+**手順**:
+```bash
+# Brief形式でショート動画を生成
+nlm video create <nb-id> --format brief --style auto_select --language ja --confirm
+
+# 生成完了を待つ
+nlm studio status <nb-id>
+
+# ダウンロード（ファイル名に _short を付与）
+nlm download video <nb-id> --output 04_Media/videos/YYYY-MM-DD_[slug]_short_ja.mp4
+```
+
+### Step 7: Watermark除去 — NotebookLMロゴ消去
+
+NotebookLMが生成する動画には右下に「NotebookLM」ロゴ、末尾に「notebooklm.google.com」画面が含まれる。
+公開前にこれらを自動除去する。
+
+**使用スクリプト**: `scripts/remove_nlm_watermark.py`
+
+```bash
+# 全動画を一括処理（元ファイルを上書き）
+python3 .agent/skills/ST_Content_Hub/scripts/remove_nlm_watermark.py \
+  --dir 04_Media/videos/ --in-place
+
+# 単一ファイルの処理
+python3 .agent/skills/ST_Content_Hub/scripts/remove_nlm_watermark.py \
+  --input 04_Media/videos/YYYY-MM-DD_[slug]_ja.mp4
+```
+
+**処理内容**:
+1. 右下の「NotebookLM」テキスト＋アイコンを白塗り（drawbox）
+2. 末尾3秒のエンドカード（notebooklm.google.com）をカット
+3. CRF 18 で libx264 再エンコード
+
+> **Note**: `--portrait` オプションで Short動画を 9:16 縦長に変換することも可能だが、NotebookLMの動画はテキストが画面全幅に配置されるため、中央クロップでは文字が見切れる。デフォルトでは 16:9 のまま処理する。
+
+### Step 8: Manifest更新
 
 Content Blast Manifest に全生成物のパスを記録:
 
@@ -241,8 +300,9 @@ python3 .agent/skills/ST_Content_Hub/scripts/update_manifest.py \
   --article "02_Articles/YYYY/YYYY-MM-DD_[slug].md" \
   --visual "03_SNS/visuals/YYYY-MM-DD_[slug].webp" \
   --posts "03_SNS/posts/YYYY-MM-DD_[slug]_posts.md" \
-  --podcast "04_Media/podcasts/YYYY-MM-DD_[slug].mp3" \
-  --video "04_Media/videos/YYYY-MM-DD_[slug].mp4"
+  --podcast "04_Media/podcasts/YYYY-MM-DD_[slug]_ja.mp3" \
+  --video "04_Media/videos/YYYY-MM-DD_[slug]_ja.mp4" \
+  --short-video "04_Media/videos/YYYY-MM-DD_[slug]_short_ja.mp4"
 ```
 
 ---
@@ -295,13 +355,21 @@ ST_Content_Hub（このスキル: オーケストレーション層）
 │   ├── research/         # Evidence Packs
 │   ├── themes/           # テーマ候補
 │   └── visuals/          # インフォグラフィック
-├── 04_Media/             # マルチメディア（新規）
-│   ├── podcasts/         # ポッドキャスト音声
-│   ├── videos/           # 動画素材
+├── 04_Media/             # マルチメディア
+│   ├── podcasts/         # ポッドキャスト音声 (*_ja.mp3, *.mp3)
+│   ├── videos/           # 動画素材 (*_ja.mp4, *_short_ja.mp4)
 │   └── manifests/        # Content Blast Manifests
-├── 05_Simulations/       # インタラクティブシミュレーション（新規）
+├── 05_Simulations/       # インタラクティブシミュレーション
 └── 99_System/            # システム設定
 ```
+
+## ファイル命名規則（多言語対応）
+
+| メディア種別 | 英語版 | 日本語版 |
+|:--|:--|:--|
+| ポッドキャスト | `{date}_{slug}.mp3` | `{date}_{slug}_ja.mp3` |
+| Explainer動画 | `{date}_{slug}.mp4` | `{date}_{slug}_ja.mp4` |
+| Short動画 | `{date}_{slug}_short.mp4` | `{date}_{slug}_short_ja.mp4` |
 
 ---
 
@@ -315,6 +383,18 @@ git push origin main
 
 ---
 
+## スクリプト一覧
+
+| スクリプト | 用途 |
+|:--|:--|
+| `scripts/content_blast.py` | Content Blastオーケストレーション（`--lang`で言語指定） |
+| `scripts/deep_research.py` | Deep Researchオーケストレーション |
+| `scripts/nlm_pipeline.py` | NotebookLM CLIラッパー |
+| `scripts/update_manifest.py` | Manifest更新（`--short-video`対応） |
+| `scripts/remove_nlm_watermark.py` | 動画ウォーターマーク自動除去 |
+
+---
+
 ## 品質ゲート（Content Blast 完了前チェック）
 
 - [ ] EPにない新主張を記事やポストに追加していないか
@@ -324,5 +404,6 @@ git push origin main
 - [ ] Brand Voice 7原則に違反していないか
 - [ ] 記事は2000字以上か
 - [ ] 画像は9:16縦長で生成されているか
-- [ ] ポッドキャスト/動画の生成状態を確認したか
-- [ ] Manifestが正しく更新されているか
+- [ ] ポッドキャスト/動画/Short動画の生成状態を確認したか
+- [ ] ウォーターマーク除去が完了しているか
+- [ ] Manifestが正しく更新されているか（多言語版含む）

@@ -16,6 +16,10 @@
 | 3 | 📱 X投稿文 | ✅ | `03_SNS/posts/2026-02-21_camera_technology_posts.md` |
 | 4 | 🎙️ ポッドキャスト | ✅ | `04_Media/podcasts/2026-02-21_camera_technology.mp3` |
 | 5 | 🎬 動画 | ✅ | `04_Media/videos/2026-02-21_camera_technology.mp4` |
+| 6 | 📱 Short動画 | ✅ | `04_Media/videos/2026-02-21_camera_technology_short.mp4` |
+| 7 | 🎙️ ポッドキャスト (日本語) | ✅ | `04_Media/podcasts/2026-02-21_camera_technology_ja.mp3` |
+| 8 | 🎬 動画 (日本語) | ✅ | `04_Media/videos/2026-02-21_camera_technology_ja.mp4` |
+| 9 | 📱 Short動画 (日本語) | ✅ | `04_Media/videos/2026-02-21_camera_technology_short_ja.mp4` |
 
 ---
 

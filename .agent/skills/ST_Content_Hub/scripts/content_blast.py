@@ -46,6 +46,12 @@ CONTENT_TYPES = [
         "output_pattern": "04_Media/videos/{date}_{slug}.mp4",
         "description": "NotebookLM explainer形式",
     },
+    {
+        "id": "short_video",
+        "name": "📱 Short動画",
+        "output_pattern": "04_Media/videos/{date}_{slug}_short.mp4",
+        "description": "NotebookLM brief形式（1分以内のショート動画）",
+    },
 ]
 
 
@@ -101,8 +107,9 @@ def main():
     parser.add_argument("--ep", required=True, help="Evidence Packファイルパス")
     parser.add_argument("--slug", required=True, help="コンテンツのslug")
     parser.add_argument("--topic", default=None, help="トピック名（省略時はEPから推定）")
-    parser.add_argument("--steps", nargs="*", choices=["article", "visual", "posts", "podcast", "video", "all"],
+    parser.add_argument("--steps", nargs="*", choices=["article", "visual", "posts", "podcast", "video", "short_video", "all"],
                         default=["all"], help="実行ステップ")
+    parser.add_argument("--lang", default="ja", help="音声・動画の言語 (en, ja など。デフォルト: ja)")
     args = parser.parse_args()
 
     date_str = datetime.now().strftime("%Y-%m-%d")
@@ -158,17 +165,21 @@ def main():
     print(f"\n📄 Manifest created: {manifest_path}")
 
     # NLMコマンドの表示
-    if run_all or "podcast" in args.steps or "video" in args.steps:
+    if run_all or "podcast" in args.steps or "video" in args.steps or "short_video" in args.steps:
+        lang_suffix = f"_{args.lang}" if args.lang != "en" else ""
         print(f"\n🎙️ NotebookLM Commands:")
         print(f'  nlm notebook create "ST Channel: {topic}"')
         print(f'  nlm source add <nb-id> --text "<EP全文>" --title "{topic} EP"')
-        print(f'  nlm audio create <nb-id> --format deep_dive --length default --confirm')
-        print(f'  nlm video create <nb-id> --format explainer --style auto_select --confirm')
+        print(f'  nlm audio create <nb-id> --format deep_dive --language {args.lang} --length default --confirm')
+        print(f'  nlm video create <nb-id> --format explainer --style auto_select --language {args.lang} --confirm')
+        print(f'  nlm video create <nb-id> --format brief --style auto_select --language {args.lang} --confirm')
         print(f'  nlm studio status <nb-id>')
-        podcast_path = f"04_Media/podcasts/{date_str}_{args.slug}.mp3"
-        video_path = f"04_Media/videos/{date_str}_{args.slug}.mp4"
+        podcast_path = f"04_Media/podcasts/{date_str}_{args.slug}{lang_suffix}.mp3"
+        video_path = f"04_Media/videos/{date_str}_{args.slug}{lang_suffix}.mp4"
+        short_path = f"04_Media/videos/{date_str}_{args.slug}_short{lang_suffix}.mp4"
         print(f'  nlm download audio <nb-id> --output {podcast_path}')
         print(f'  nlm download video <nb-id> --output {video_path}')
+        print(f'  nlm download video <nb-id> --output {short_path}  # brief版')
 
     print(f"\n💡 Agent: 上記ステップを順次実行してください。")
     print(f"   Manifest ({manifest_path}) のステータスを都度更新してください。")
